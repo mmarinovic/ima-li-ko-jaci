@@ -10,7 +10,6 @@ namespace KisaMetaka.ImaLiKoJaci.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute("FacebookLogin", "login", new { controller = "Login", action = "FacebookLogin" });
-            routes.MapRoute("FacebookAuth", "fbauth", new { controller = "Login", action = "FacebookAuth" });
             routes.MapRoute("FacebookCallback", "fbcallback", new { controller = "Login", action = "FacebookCallback" });
 
             routes.MapRoute(
