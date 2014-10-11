@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d35ce928ec174b6b9aa1f8a5bfda312a" Name="Diagram1" >
+        <EntityTypeShape EntityType="KisaMetaka.ImaLiKoJaci.Data.User" Width="1.75" PointX="3.375" PointY="2.375" />
+        <EntityTypeShape EntityType="KisaMetaka.ImaLiKoJaci.Data.Song" PointX="5.875" PointY="2.375" Width="1.75" />
+        <EntityTypeShape EntityType="KisaMetaka.ImaLiKoJaci.Data.Lyrics" Width="1.75" PointX="8.5" PointY="2.375" />
+        <AssociationConnector Association="KisaMetaka.ImaLiKoJaci.Data.AS_Song_Lyrics" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

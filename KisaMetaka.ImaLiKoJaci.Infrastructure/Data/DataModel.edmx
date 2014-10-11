@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KisaMetaka.ImaLiKoJaci.Data.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="KisaMetakaImaLiKoJaciDataStoreContainer">
+    <EntitySet Name="Users" EntityType="KisaMetaka.ImaLiKoJaci.Data.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Songs" EntityType="KisaMetaka.ImaLiKoJaci.Data.Store.Songs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lyrics" EntityType="KisaMetaka.ImaLiKoJaci.Data.Store.Lyrics" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AS_Song_Lyrics" Association="KisaMetaka.ImaLiKoJaci.Data.Store.AS_Song_Lyrics">
+      <End Role="Song" EntitySet="Songs" />
+      <End Role="Lyrics" EntitySet="Lyrics" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FacebookId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JoinedOn" Type="datetime" Nullable="false" />
+    <Property Name="TotalScore" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Songs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YoutubeUrl" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lyrics">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FromSecond" Type="int" Nullable="false" />
+    <Property Name="ToSecond" Type="int" Nullable="false" />
+    <Property Name="ScoreValue" Type="int" Nullable="false" />
+    <Property Name="SongId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="AS_Song_Lyrics">
+    <End Role="Song" Type="KisaMetaka.ImaLiKoJaci.Data.Store.Songs" Multiplicity="1" />
+    <End Role="Lyrics" Type="KisaMetaka.ImaLiKoJaci.Data.Store.Lyrics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lyrics">
+        <PropertyRef Name="SongId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="KisaMetaka.ImaLiKoJaci.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
+        <EntityContainer Name="DataModel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="KisaMetaka.ImaLiKoJaci.Data.User" />
+          <EntitySet Name="Songs" EntityType="KisaMetaka.ImaLiKoJaci.Data.Song" />
+          <EntitySet Name="Lyrics" EntityType="KisaMetaka.ImaLiKoJaci.Data.Lyrics" />
+          <AssociationSet Name="AS_Song_Lyrics" Association="KisaMetaka.ImaLiKoJaci.Data.AS_Song_Lyrics">
+            <End Role="Song" EntitySet="Songs" />
+            <End Role="Lyrics" EntitySet="Lyrics" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DisplayName" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="FacebookId" Nullable="false" />
+          <Property Type="DateTime" Name="JoinedOn" Nullable="false" />
+          <Property Type="Int32" Name="TotalScore" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="YoutubeUrl" Nullable="false" />
+          <NavigationProperty Name="Lyrics" Relationship="KisaMetaka.ImaLiKoJaci.Data.AS_Song_Lyrics" FromRole="Song" ToRole="Lyrics" />
+        </EntityType>
+        <EntityType Name="Lyrics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Question" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="Answer" Nullable="false" Unicode="true" />
+          <Property Type="Int32" Name="FromSecond" Nullable="false" />
+          <Property Type="Int32" Name="ToSecond" Nullable="false" />
+          <Property Type="Int32" Name="ScoreValue" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="KisaMetaka.ImaLiKoJaci.Data.AS_Song_Lyrics" FromRole="Lyrics" ToRole="Song" />
+          <Property Type="Int32" Name="SongId" Nullable="false" />
+        </EntityType>
+        <Association Name="AS_Song_Lyrics">
+          <End Type="KisaMetaka.ImaLiKoJaci.Data.Song" Role="Song" Multiplicity="1" />
+          <End Type="KisaMetaka.ImaLiKoJaci.Data.Lyrics" Role="Lyrics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Lyrics">
+              <PropertyRef Name="SongId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KisaMetakaImaLiKoJaciDataStoreContainer" CdmEntityContainer="DataModel">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(KisaMetaka.ImaLiKoJaci.Data.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="FacebookId" ColumnName="FacebookId" />
+          <ScalarProperty Name="JoinedOn" ColumnName="JoinedOn" />
+          <ScalarProperty Name="TotalScore" ColumnName="TotalScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Songs">
+      <EntityTypeMapping TypeName="IsTypeOf(KisaMetaka.ImaLiKoJaci.Data.Song)">
+        <MappingFragment StoreEntitySet="Songs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="YoutubeUrl" ColumnName="YoutubeUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lyrics">
+      <EntityTypeMapping TypeName="IsTypeOf(KisaMetaka.ImaLiKoJaci.Data.Lyrics)">
+        <MappingFragment StoreEntitySet="Lyrics">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="FromSecond" ColumnName="FromSecond" />
+          <ScalarProperty Name="ToSecond" ColumnName="ToSecond" />
+          <ScalarProperty Name="ScoreValue" ColumnName="ScoreValue" />
+          <ScalarProperty Name="SongId" ColumnName="SongId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
