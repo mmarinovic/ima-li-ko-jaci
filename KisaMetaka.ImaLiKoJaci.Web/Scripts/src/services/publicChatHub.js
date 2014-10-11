@@ -1,5 +1,5 @@
 ﻿imaLiJaciModul
-    .factory('publicChatHub', ['Hub', '$rootScope', 'hubListenerNames', '$timeout', function (Hub, $rootScope, hubListenerNames, $timeout) {
+    .factory('publicChatHub', ['Hub', '$rootScope', 'hubListenerNames', function (Hub, $rootScope, hubListenerNames) {
 
     return new Hub('publicChat', {
         
