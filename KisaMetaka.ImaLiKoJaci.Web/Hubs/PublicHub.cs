@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using KisaMetaka.ImaLiKoJaci.Web.Models.Chat;
+using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
 namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
@@ -18,10 +19,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
             hubContext.Clients.All.showCorrectAnswer(winnerDisplayName, answer);
         }
 
-        public static void SendAnswer(string answer)
+        public static void SendAnswer(AnswerModel model)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.showAnswer(answer);
+            hubContext.Clients.All.sendAnswer(model);
         }
     }
 }

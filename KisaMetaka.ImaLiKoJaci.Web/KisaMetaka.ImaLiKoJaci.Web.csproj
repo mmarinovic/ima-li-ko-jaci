@@ -165,6 +165,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\PublicHub.cs" />
+    <Compile Include="Models\Chat\AnswerModel.cs" />
     <Compile Include="Models\Chat\SendAnswerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

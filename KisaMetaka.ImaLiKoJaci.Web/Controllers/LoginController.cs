@@ -64,6 +64,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
                     string displayName = string.Format("{0} {1}", me.first_name, me.last_name);
 
                     _userRepository.Create(displayName, facebookId);
+                    _loginService.SignIn(facebookId);
                 }
             }
 

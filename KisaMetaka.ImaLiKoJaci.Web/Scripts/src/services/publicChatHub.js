@@ -4,16 +4,16 @@
     return new Hub('publicChat', {
         
         listeners: {
-            ShowNewQuestion: function (question) {
+            showNewQuestion: function (question) {
                 $rootScope.$broadcast(hubListenerNames.showNewQuestion, question);
                 $rootScope.$apply();
             },
-            ShowCorrectAnswer: function(correctAnswer) {
+            showCorrectAnswer: function(correctAnswer) {
                 
                 $rootScope.$broadcast(hubListenerNames.showCorrectAnswer, correctAnswer);
                 $rootScope.$apply();
             },
-            ShowAnswer: function (answer) {
+            sendAnswer: function (answer) {
                 
                 $rootScope.$broadcast(hubListenerNames.showAnswer, answer);
                 $rootScope.$apply();
