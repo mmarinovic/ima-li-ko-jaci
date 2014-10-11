@@ -18,10 +18,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
             hubContext.Clients.All.showCorrectAnswer(winnerDisplayName, answer);
         }
 
-        public static void SendAnswer(string userFacebookId, string answer)
+        public static void SendAnswer(string answer)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.showAnswer(userFacebookId, answer);
+            hubContext.Clients.All.showAnswer(answer);
         }
     }
 }
