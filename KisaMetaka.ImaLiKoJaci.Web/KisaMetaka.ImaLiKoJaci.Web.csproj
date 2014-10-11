@@ -131,10 +131,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
-    <Content Include="HtmlTemplates\imaLiJaciHome.html" />
+    <Content Include="HtmlTemplates\chatInput.html" />
+    <Content Include="HtmlTemplates\chatRenderer.html" />
+    <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <Content Include="Scripts\src\app-states.js" />
     <Content Include="Scripts\src\app.js" />
-    <Content Include="Scripts\src\controllers\imaLiJaciHome.js" />
+    <Content Include="Scripts\src\controllers\imaLiJaciPublic.js" />
+    <Content Include="Scripts\src\directives\chatInput.js" />
+    <Content Include="Scripts\src\directives\chatRenderer.js" />
     <Content Include="Scripts\vendor\angular-signalr-hub-min.js" />
     <Content Include="Scripts\vendor\angular-ui-router.min.js" />
     <Content Include="Scripts\vendor\angular-v1.3.0-rc.5.min.js" />
@@ -145,7 +149,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
