@@ -12,7 +12,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Shell", action = "Shell", id = UrlParameter.Optional }
             );
         }
     }
