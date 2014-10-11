@@ -13,7 +13,6 @@ namespace KisaMetaka.ImaLiKoJaci.Web
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            DependecyConfig.RegisterDependencies();
         }
     }
 }
