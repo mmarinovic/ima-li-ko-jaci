@@ -7,9 +7,23 @@
             scope: {},
             templateUrl: '/HtmlTemplates/chatRenderer.html',
 
-            controller: ['$scope', function($scope) {
+            controller: ['$scope', 'publicChatService', function ($scope, publicChatService) {
 
-                $scope.message = "renderer";
+                $scope.messages = [];
+
+                function showNewQuestion(question) {
+                    $scope.messages.push(question);
+                };
+
+                function showCorrectAnswer(correctAnswer) {
+                    $scope.messages.push(correctAnswer);
+                };
+
+                function sendAnswer(answer) {
+                    $scope.messages.push(answer);
+                };
+
+                publicChatService.setListeners(showNewQuestion, showCorrectAnswer, sendAnswer);
             }]
         }
     });

@@ -175,6 +175,7 @@
     <Content Include="HtmlTemplates\chatRenderer.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <None Include="Scripts\vendor\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\src\services\publicChatService.js" />
     <Content Include="Scripts\vendor\jquery-1.6.4.js" />
     <Content Include="Scripts\vendor\jquery-1.6.4.min.js" />
     <Content Include="Scripts\vendor\jquery.signalR-2.1.2.js" />
@@ -201,7 +202,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\src\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

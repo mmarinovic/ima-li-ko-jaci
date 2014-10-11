@@ -1,5 +1,5 @@
 ﻿imaLiJaciModul
-    .directive('chatInput', function() {
+    .directive('chatInput', function () {
 
         return {
             
@@ -7,8 +7,12 @@
             scope: {},
             templateUrl: '/HtmlTemplates/chatInput.html',
 
-            controller: ['$scope', function($scope) {
-                
+            controller: ['$scope', 'publicChatService', function ($scope, publicChatService) {
+
+                $scope.sendAnswer = function(answer) {
+
+                    publicChatService.sendAnswer(answer);
+                };
             }]
         }
     });
