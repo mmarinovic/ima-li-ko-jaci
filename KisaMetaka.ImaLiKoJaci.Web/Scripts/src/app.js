@@ -1,0 +1,1 @@
+﻿var imaLiJaciModul = angular.module('imaLiJaciModul', ['ui.router', 'SignalR']);
