@@ -1,26 +1,32 @@
 ﻿imaLiJaciModul
-    .factory('publicChatService', ['Hub', function (Hub) {
-    console.log("Init");
+    .factory('publicChatService', ['Hub', '$rootScope', 'hubListenerNames', function (Hub, $rootScope, hubListenerNames) {
+
+    console.log("Initializing hub"); 
     var hub = new Hub('publicChat', {
         
         listeners: {
-            ShowNewQuestion: Function,
-            ShowCorrectAnswer: Function,
-            ShowAnswer: Function
+            ShowNewQuestion: function (question) {
+
+                $rootScope.$broadcast(hubListenerNames.showNewQuestion, question);
+            },
+            ShowCorrectAnswer: function(correctAnswer) {
+                
+                $rootScope.$broadcast(hubListenerNames.showCorrectAnswer, correctAnswer);
+            },
+            ShowAnswer: function (answer) {
+                
+                $rootScope.$broadcast(hubListenerNames.showAnswer, answer);
+            }
         },
-        methods: ['SendAnswer']
+        methods: ['sendAnswer'],
+        errorHandler: function (error) {
+            console.log(error);
+        }
     });
 
     return {
-        setListeners: function (showNewQuestion, showCorrectAnswer, showAnswer) {
-
-            hub.listeners.ShowNewQuestion = showNewQuestion;
-            hub.listeners.ShowCorrectAnswer = showCorrectAnswer;
-            hub.listeners.ShowAnswer = showAnswer;
-        },
         sendAnswer: function(answer) {
-
-            hub.SendAnswer(answer);
+            hub.sendAnswer("Id", answer);
         }
     };
 }]);

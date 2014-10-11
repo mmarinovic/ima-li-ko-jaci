@@ -174,11 +174,8 @@
     <Content Include="HtmlTemplates\chatInput.html" />
     <Content Include="HtmlTemplates\chatRenderer.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
-    <None Include="Scripts\vendor\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\src\enums\hubListenerNames.js" />
     <Content Include="Scripts\src\services\publicChatService.js" />
-    <Content Include="Scripts\vendor\jquery-1.6.4.js" />
-    <Content Include="Scripts\vendor\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\vendor\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\vendor\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\src\app-states.js" />
     <Content Include="Scripts\src\app.js" />

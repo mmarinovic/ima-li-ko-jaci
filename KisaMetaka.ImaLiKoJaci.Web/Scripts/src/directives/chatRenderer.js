@@ -7,7 +7,7 @@
             scope: {},
             templateUrl: '/HtmlTemplates/chatRenderer.html',
 
-            controller: ['$scope', 'publicChatService', function ($scope, publicChatService) {
+            controller: ['$scope', 'hubListenerNames', function ($scope, hubListenerNames) {
 
                 $scope.messages = [];
 
@@ -19,11 +19,21 @@
                     $scope.messages.push(correctAnswer);
                 };
 
-                function sendAnswer(answer) {
+                function showAnswer(answer) {
                     $scope.messages.push(answer);
                 };
+                
+                $scope.$on(hubListenerNames.showNewQuestion, function(question) {
+                    showNewQuestion(question);
+                });
 
-                publicChatService.setListeners(showNewQuestion, showCorrectAnswer, sendAnswer);
+                $scope.$on(hubListenerNames.showCorrectAnswer, function (correctAnswer) {
+                    showCorrectAnswer(correctAnswer);
+                });
+
+                $scope.$on(hubListenerNames.showAnswer, function (answer) {
+                    showAnswer(answer);
+                });
             }]
         }
     });

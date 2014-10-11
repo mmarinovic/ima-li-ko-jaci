@@ -21,7 +21,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
         public static void SendAnswer(string userFacebookId, string answer)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.sendAnswer(userFacebookId, answer);
+            hubContext.Clients.All.showAnswer(userFacebookId, answer);
         }
     }
 }

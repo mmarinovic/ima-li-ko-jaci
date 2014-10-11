@@ -10,7 +10,6 @@
             controller: ['$scope', 'publicChatService', function ($scope, publicChatService) {
 
                 $scope.sendAnswer = function(answer) {
-
                     publicChatService.sendAnswer(answer);
                 };
             }]
