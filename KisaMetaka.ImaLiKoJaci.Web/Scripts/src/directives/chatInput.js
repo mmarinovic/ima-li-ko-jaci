@@ -13,5 +13,5 @@
                     chatRepository.sendAnswer(answer);
                 };
             }]
-        }
+        };
     });
