@@ -19,7 +19,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
         public ActionResult FacebookLogin()
         {
             var signedInUser = _loginService.TryGetSignedInUser();
-            if (signedInUser != null) { return RedirectToRoute("Default"); }
+            if (signedInUser != null) { return Redirect("/"); }
 
             var fb = new FacebookClient();
             var loginUrl = fb.GetLoginUrl(new
@@ -33,38 +33,41 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
             return Redirect(loginUrl.AbsoluteUri);
         }
 
-        public ActionResult FacebookCallback(string code, string returnUrl)
+        public ActionResult FacebookCallback(string code)
         {
             var signedInUser = _loginService.TryGetSignedInUser();
-            if (signedInUser != null) { return RedirectToRoute("Default"); }
+            if (signedInUser != null) { return Redirect("/"); }
 
-            var fb = new FacebookClient();
-            dynamic result = fb.Get("oauth/access_token", new
+            if (!string.IsNullOrWhiteSpace(code))
             {
-                client_id = "1488571918075251",
-                client_secret = "8137c8895a63f75cc861aeb138c63715",
-                redirect_uri = Url.RouteUrl("FacebookCallback", new { }, Request.Url.Scheme),
-                code = code
-            });
+                var fb = new FacebookClient();
+                dynamic result = fb.Get("oauth/access_token", new
+                {
+                    client_id = "1488571918075251",
+                    client_secret = "8137c8895a63f75cc861aeb138c63715",
+                    redirect_uri = Url.RouteUrl("FacebookCallback", new { }, Request.Url.Scheme),
+                    code = code
+                });
 
-            fb.AccessToken = result.access_token;
-            dynamic me = fb.Get("me?fields=first_name,last_name,id");
+                fb.AccessToken = result.access_token;
+                dynamic me = fb.Get("me?fields=first_name,last_name,id");
 
-            string facebookId = me.id;
-            var user = _userRepository.TryGet(facebookId);
+                string facebookId = me.id;
+                var user = _userRepository.TryGet(facebookId);
 
-            if (user != null)
-            {
-                _loginService.SignIn(user.FacebookId);
+                if (user != null)
+                {
+                    _loginService.SignIn(user.FacebookId);
+                }
+                else
+                {
+                    string displayName = string.Format("{0} {1}", me.first_name, me.last_name);
+
+                    _userRepository.Create(displayName, facebookId);
+                }
             }
-            else
-            {
-                string displayName = string.Format("{0} {1}", me.first_name, me.last_name);
 
-                _userRepository.Create(facebookId, displayName);
-            }
-
-            return RedirectToRoute("Default");
+            return Redirect("/");
         }
     }
 }
