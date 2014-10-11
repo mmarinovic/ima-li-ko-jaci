@@ -23,15 +23,15 @@
                     $scope.messages.push(answer);
                 };
                 
-                $scope.$on(hubListenerNames.showNewQuestion, function(question) {
+                $scope.$on(hubListenerNames.showNewQuestion, function(e, question) {
                     showNewQuestion(question);
                 });
 
-                $scope.$on(hubListenerNames.showCorrectAnswer, function (correctAnswer) {
+                $scope.$on(hubListenerNames.showCorrectAnswer, function (e, correctAnswer) {
                     showCorrectAnswer(correctAnswer);
                 });
 
-                $scope.$on(hubListenerNames.showAnswer, function (answer) {
+                $scope.$on(hubListenerNames.showAnswer, function (e, answer) {
                     showAnswer(answer);
                 });
             }]
