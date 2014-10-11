@@ -1,5 +1,5 @@
 ﻿imaLiJaciModul
-    .directive('chatInput', function (publicChatHub) {
+    .directive('chatInput', function () {
 
         return {
             
