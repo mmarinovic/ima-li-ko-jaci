@@ -178,6 +178,7 @@
     <Content Include="HtmlTemplates\chatRenderer.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <Content Include="Scripts\src\enums\hubListenerNames.js" />
+    <Content Include="Scripts\src\filters\dateTime.js" />
     <Content Include="Scripts\src\repositories\chatRepository.js" />
     <Content Include="Scripts\src\services\publicChatHub.js" />
     <Content Include="Scripts\vendor\angular-resource.min.js" />
