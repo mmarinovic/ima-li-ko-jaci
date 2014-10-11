@@ -1,14 +1,14 @@
 ﻿imaLiJaciModul.config([
     '$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     
-        var imaLiJaciHome = {
-            name: 'imaLiJaciHome',
+        var imaLiJaciPublic = {
+            name: 'imaLiJaciPublic',
             url: '/',
-            controller: 'imaLiJaciHome',
-            templateUrl: '/Htmltemplates/imaLiJaciHome.html'
+            controller: 'imaLiJaciPublic',
+            templateUrl: '/Htmltemplates/imaLiJaciPublic.html'
         };
 
-        $stateProvider.state(imaLiJaciHome);
+        $stateProvider.state(imaLiJaciPublic);
 
         $locationProvider.html5Mode(true);
     }
