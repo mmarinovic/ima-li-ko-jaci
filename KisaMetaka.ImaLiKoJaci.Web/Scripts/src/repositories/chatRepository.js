@@ -6,7 +6,7 @@
 
                 var resource = $resource('/api/Chat/SendAnswer');
 
-                return resource.save(answer).$promise;
+                return resource.save({answer: answer}).$promise;
             }
         }
 }]);
