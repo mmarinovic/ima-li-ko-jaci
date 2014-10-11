@@ -11,7 +11,7 @@
     }]);
 
 imaLiJaciModul
-    .filter('timeFilter', ['$filter', function ($filter) {
+    .filter('time', ['$filter', function ($filter) {
 
         return function (dateTime) {
 
