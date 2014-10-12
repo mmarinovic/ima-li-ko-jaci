@@ -3,28 +3,28 @@ GO
 SET IDENTITY_INSERT [dbo].[Songs] ON 
 
 GO
-INSERT [dbo].[Songs] ([Id], [Title], [YoutubeUrl]) VALUES (1, N'Mirela Holy', N'https://www.youtube.com/watch?v=7aLcw8nddok')
+INSERT [dbo].[Songs] ([Id], [Title], [YoutubeUrl]) VALUES (1, N'Mirela Holy', N'/Assets/mirela-holy.mp3')
 GO
-INSERT [dbo].[Songs] ([Id], [Title], [YoutubeUrl]) VALUES (2, N'Pljačkam turiste', N'https://www.youtube.com/watch?v=aL80LbssDVc')
+INSERT [dbo].[Songs] ([Id], [Title], [YoutubeUrl]) VALUES (2, N'Pljačkam turiste', N'/Assets/pljackam-turiste.mp3')
 GO
 SET IDENTITY_INSERT [dbo].[Songs] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Lyrics] ON 
 
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (1, N'ima li ko jaci, ima li ko jaci', N'S ovakvim modelima ne isplati se kacit', 0, 0, 10, 1)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (1, N'ima li ko jaci, ima li ko jaci', N'S ovakvim modelima ne isplati se kacit', 19, 24, 10, 1)
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (3, N'ganđa mi je sirova, nosin je u đepu', N'obavim poziv eto me za sekund ', 0, 0, 10, 1)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (3, N'ganđa mi je sirova, nosin je u đepu', N'obavim poziv eto me za sekund ', 30, 34, 10, 1)
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (5, N'ćim uđem u tommya ukradem bocu đonija', N'kad te vidin pitan sta si donija ', 0, 0, 10, 1)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (5, N'ćim uđem u tommya ukradem bocu đonija', N'kad te vidin pitan sta si donija ', 36, 39, 10, 1)
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (6, N'pročita sam ti tekst i pogodija koš ', N'jadranka kosor nosi moj broš ', 0, 0, 10, 1)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (6, N'pročita sam ti tekst i pogodija koš ', N'jadranka kosor nosi moj broš ', 72, 75, 10, 1)
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (7, N'kad sidin na školjci čitan samo story', N'veča san kutija nego igor vori', 0, 0, 10, 1)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (7, N'kad sidin na školjci čitan samo story', N'veča san kutija nego igor vori', 117, 121, 10, 1)
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (8, N'liti kad si u splitu kad ti triba trava', N'nađi me u biloj majici bez rukava', 0, 0, 10, 2)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (8, N'liti kad si u splitu kad ti triba trava', N'nađi me u biloj majici bez rukava', 19, 23, 10, 2)
 GO
-INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (9, N'stalno žrtve smjeran dok po rivi se gegan ', N'ako nešto tribaš brate nema čega nemam', 0, 0, 10, 2)
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (9, N'stalno žrtve smjeran dok po rivi se gegan ', N'ako nešto tribaš brate nema čega nemam', 64, 68, 10, 2)
 GO
 SET IDENTITY_INSERT [dbo].[Lyrics] OFF
 GO

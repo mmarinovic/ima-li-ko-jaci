@@ -19,7 +19,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
             this.ScoreValue = lyrics.ScoreValue;
             this.Song = new SongDto(lyrics.Song);
         }
-
+        
         public int Id { get; private set; }
         public string Question { get; private set; }
         public string Answer { get; private set; }

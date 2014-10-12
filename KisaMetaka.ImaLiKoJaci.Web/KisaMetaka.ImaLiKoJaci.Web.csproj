@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="Helpers\ChatLogicHelper.cs" />
     <Compile Include="Hubs\PublicHub.cs" />
+    <Compile Include="Models\Chat\CorrectAnswerMessageModel.cs" />
     <Compile Include="Models\Chat\MessageModel.cs" />
     <Compile Include="Models\Chat\MessageType.cs" />
     <Compile Include="Models\Chat\SendAnswerModel.cs" />

@@ -5,55 +5,58 @@
             
             restrict: 'E',
             scope: {
-                url: '@',
-                type: '@',
-                from: '@',
-                to: '@'
+                song: '='
             },
             templateUrl: '/HtmlTemplates/answerPlayer.html',
 
             controller: ['$scope', '$element', function ($scope, $element) {
 
                 var audioElement = $element.find('audio');
+                $scope.loadedmetadataHandler = null;
+                $scope.volumeAnimationHandler = null;
 
-                function setupPlayer(url, type, from, to) {
-                  
+                function resetPlayer() {
+                    $scope.answerPlayer.pause();
+                    $scope.answerPlayer.currentTime = 0;
+                    $scope.answerPlayer.setVolume(1);
+                    $scope.volumeAnimationHandler = null;
+                }
+
+                function setupPlayer(url, type) {
+
+                    resetPlayer();
                     $scope.answerPlayer.load([{ src: url, type: type, media: '.css.media.query' }, false]);
 
-                    if (from) {
-                        setStartPosition(from);
-                    };
+                    setStartPosition();
+                    $scope.answerPlayer.play();
+                };
 
-                    if (to) {
-                        stopAtPosition(to);
+                $scope.$watch('answerPlayer.currentTime', function (currentTime) {
+
+                    if ($scope.song && currentTime >= $scope.song.toSecond && !$scope.volumeAnimationHandler) {
+                        $scope.volumeAnimationHandler = $(audioElement).animate({ volume: 0 }, 2000);
                     }
+                });
 
-                    $scope.answerPlayer.play(0, false);
+                function setStartPosition() {
+
+                    if (!$scope.loadedmetadataHandler) {
+                        $scope.loadedmetadataHandler = $scope.answerPlayer.on('loadedmetadata', function () {
+
+                            $scope.answerPlayer.seek($scope.song.fromSecond);
+                        });
+                    }
                 };
 
-                function stopAtPosition(stopPosition) {
+                $scope.$watch('song', function(song) {
 
-                    $scope.$watch('answerPlayer.currentTime', function(currentTime) {
+                    if (song) {
+                        $scope.$watch('answerPlayer', function (answerPlayer) {
 
-                        if (currentTime >= stopPosition) {
-
-                            $(audioElement).animate({ volume: 0 }, 2000);
-                        }
-                    });
-                };
-
-                function setStartPosition(startPosition) {
-
-                    $scope.answerPlayer.on('loadedmetadata', function () {
-                        $scope.answerPlayer.seek(startPosition);
-                    });
-                };
-
-                $scope.$watch('answerPlayer', function (answerPlayer) {
-                    
-                    if (answerPlayer) {
-                      
-                        setupPlayer($scope.url, $scope.type, $scope.from, $scope.to);
+                            if (answerPlayer) {
+                                setupPlayer($scope.song.url, $scope.song.type);
+                            }
+                        });
                     }
                 });
             }]

@@ -33,7 +33,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
             var messageModel = new MessageModel(_botUser, "Pripremite se za novu rundu...", MessageType.Info);
             PublicHub.SendMessage(messageModel);
 
-            _timer = new Timer(_FinishAndSetupNewRound, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(30));
+            _timer = new Timer(_FinishAndSetupNewRound, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(12));
         }
 
         private void _FinishAndSetupNewRound(object state)
@@ -57,7 +57,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
                 var messageModel = new MessageModel(_botUser, "Runda završena...", MessageType.Info);
                 PublicHub.SendMessage(messageModel);
 
-                var correctAnswerMessageModel = new MessageModel(_botUser, _currentLyrics.Answer, MessageType.CorrectAnswer);
+                var correctAnswerMessageModel = new CorrectAnswerMessageModel(
+                    _botUser, _currentLyrics.Answer, MessageType.CorrectAnswer, _currentLyrics.Song.YoutubeUrl, _currentLyrics.FromSecond, _currentLyrics.ToSecond
+                    );
+
                 PublicHub.SendMessage(correctAnswerMessageModel);
 
                 _isRoundInProgress = false;
