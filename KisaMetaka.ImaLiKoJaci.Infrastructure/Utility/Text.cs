@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -7,50 +7,52 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Utility
 {
     public static class Text
     {
-        public static string GetHiddenText(string input)
+        public static string GetHiddenText(this string str)
         {
-            input = input.RemoveDiacritics();
-            input = Regex.Replace(input, @"[A-za-z0-9]", "_ ");
+            var cleanText = str.RemoveDiacriticalChars();
 
-            return input;
-        }
-
-        public static string RemoveDiacritics(this string text)
-        {
-            var normalizedString = text.Normalize(NormalizationForm.FormD);
-            normalizedString = RemoveAllExtraSpace(normalizedString);
-
-            var stringBuilder = new StringBuilder();
-
-            foreach (var c in normalizedString)
+            var sb = new StringBuilder();
+            foreach (var c in cleanText)
             {
-                var filteredChar = FilterWithBlackList(c);
-                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(filteredChar);
-
-                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
-                {
-                    stringBuilder.Append(filteredChar);
-                }
+                if (c != ' ') { sb.Append("_ "); }
+                else { sb.Append(' ', 3); }
             }
 
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            return sb.ToString();
         }
 
-        private static readonly Dictionary<char, char> _characterBlackList = new Dictionary<char, char>
+        public static string RemoveDiacriticalChars(this string str)
         {
-            {'đ', 'd'}, {'Đ', 'D'}, {'š', 's' }, {'Š', 'S'}, {'ž', 'z'}, {'Ž', 'Z'}, {'ć', 'c'}, {'Ć', 'C'}, {'č', 'c'}, {'Č', 'C'}
-        };
+            var dict = new Dictionary<char, char>
+            {
+                {'Č', 'C'}, {'č', 'c'},
+                {'Ć', 'C'}, {'ć', 'c'},
+                {'Ž', 'Z'}, {'ž', 'z'},
+                {'Š', 'S'}, {'š', 's'},
+                {'Đ', 'D'}, {'đ', 'd'},
+            };
 
-        private static char FilterWithBlackList(char c)
-        {
-            return _characterBlackList.ContainsKey(c)
-                ? _characterBlackList[c]
-                : c;
+            var sb = new StringBuilder(str);
+            foreach (var entry in dict) { sb.Replace(entry.Key, entry.Value); }
+            return sb.ToString();
         }
 
-        private static string RemoveAllExtraSpace(string text)
+        public static bool LyricEquals(this string str1, string str2)
         {
-            return Regex.Replace(text, @"\s+", " ");
+            var first = str1
+                .RemoveDiacriticalChars()
+                .RemoveAllExtraSpace();
+
+            var second = str2
+                .RemoveDiacriticalChars()
+                .RemoveAllExtraSpace();
+
+            return string.Equals(first, second, StringComparison.OrdinalIgnoreCase);
+        }
+
+        public static string RemoveAllExtraSpace(this string str)
+        {
+            return Regex.Replace(str, @"\s+", " ");
         }
     }
 }

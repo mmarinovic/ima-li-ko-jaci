@@ -3,6 +3,7 @@ using System.Threading;
 using System.Web.Hosting;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.User;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.Utility;
 using KisaMetaka.ImaLiKoJaci.Web.Hubs;
 using KisaMetaka.ImaLiKoJaci.Web.Models.Chat;
 using StructureMap;
@@ -69,8 +70,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
         {
             if (!_isRoundInProgress) { return; }
 
-            // TODO: Better check
-            var isWinningAnswer = string.Equals(answer, _currentLyrics.Answer, StringComparison.OrdinalIgnoreCase);
+            var isWinningAnswer = answer.LyricEquals(_currentLyrics.Answer);
 
             if (isWinningAnswer)
             {
