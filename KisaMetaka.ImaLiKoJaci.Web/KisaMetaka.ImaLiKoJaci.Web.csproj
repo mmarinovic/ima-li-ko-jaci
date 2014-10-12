@@ -171,6 +171,7 @@
     <Compile Include="Models\Chat\MessageModel.cs" />
     <Compile Include="Models\Chat\MessageType.cs" />
     <Compile Include="Models\Chat\SendAnswerModel.cs" />
+    <Compile Include="Models\User\LeaderboardModel.cs" />
     <Compile Include="Models\User\UserUpdateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Timers\ChatLogicTimer.cs" />
@@ -187,10 +188,12 @@
     <Content Include="HtmlTemplates\chatRenderer.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <Content Include="HtmlTemplates\imaLiJaciTutorial.html" />
+    <Content Include="HtmlTemplates\leaderboard.html" />
     <Content Include="HtmlTemplates\mainNavigation.html" />
     <Content Include="HtmlTemplates\editProfile.html" />
     <Content Include="HtmlTemplates\signedInUserInfo.html" />
     <Content Include="Scripts\src\controllers\editProfile.js" />
+    <Content Include="Scripts\src\controllers\leaderboard.js" />
     <Content Include="Scripts\src\directives\answerPlayer.js" />
     <Content Include="Scripts\src\directives\mainNavigation.js" />
     <Content Include="Scripts\src\directives\signedInUserInfo.js" />

@@ -19,10 +19,19 @@
             url: '/profil/namazi',
             controller: 'editProfile',
             templateUrl: '/HtmlTemplates/editProfile.html'
+        };
+
+        var leaderboard = {
+            name: 'leaderboard',
+            url: '/ljestvica',
+            controller: 'leaderboard',
+            templateUrl: '/HtmlTemplates/leaderboard.html'
         }
+
         $stateProvider.state(imaLiJaciPublic)
                       .state(imaLiJaciTutorial)
-                      .state(editProfile);
+                      .state(editProfile)
+                      .state(leaderboard);
 
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/');

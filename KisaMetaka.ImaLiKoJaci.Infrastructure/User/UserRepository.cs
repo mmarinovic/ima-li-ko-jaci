@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Data;
 
@@ -53,5 +54,16 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
 
             return new UserDto(user);
         }
+
+        public IEnumerable<UserDto> GetForLeaderboard()
+        {
+            return
+                _context.Users
+                        .Where(u => u.TotalScore > 0)
+                        .OrderByDescending(u => u.TotalScore)
+                        .ToList()
+                        .Select(u => new UserDto(u))
+                        .ToList();
+        } 
     }
 }

@@ -1,4 +1,7 @@
-﻿using System.Net;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Web.Http;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Services;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.User;
@@ -27,6 +30,11 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
             _userRepository.Update(currentUser.Id, model.DisplayName);
             
             return HttpStatusCode.OK;
+        }
+
+        public IEnumerable<LeaderboardModel> GetLeaderboard()
+        {
+            return _userRepository.GetForLeaderboard().Select(u => new LeaderboardModel(u.DisplayName, u.TotalScore));
         }
     }
 }
