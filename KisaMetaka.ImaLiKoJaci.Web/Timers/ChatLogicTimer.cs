@@ -67,6 +67,8 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
 
         public void CheckWinningAnswer(string answer, UserDto user)
         {
+            if (!_isRoundInProgress) { return; }
+
             // TODO: Better check
             var isWinningAnswer = string.Equals(answer, _currentLyrics.Answer, StringComparison.OrdinalIgnoreCase);
 
