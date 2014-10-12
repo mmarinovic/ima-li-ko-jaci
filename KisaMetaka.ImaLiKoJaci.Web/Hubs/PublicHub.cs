@@ -7,10 +7,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
     [HubName("publicChat")]
     public class PublicHub : Hub
     {
-        public static void ShowNewQuestion(string question)
+        public static void ShowNewQuestion(QuestionModel model)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.showNewQuestion(question);
+            hubContext.Clients.All.showNewQuestion(model);
         }
 
         public static void ShowCorrectAnswer(string winnerDisplayName, string answer)

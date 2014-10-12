@@ -35,5 +35,5 @@
                     showAnswer(answer);
                 });
             }]
-        }
+        };
     });

@@ -13,7 +13,6 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
             _context = context;
         }
 
-
         public LyricsDto GetRandom()
         {
             var lyrics = _context.Lyrics

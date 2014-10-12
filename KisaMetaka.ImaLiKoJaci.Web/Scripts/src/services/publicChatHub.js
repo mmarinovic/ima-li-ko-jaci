@@ -5,6 +5,7 @@
         
         listeners: {
             showNewQuestion: function (question) {
+                
                 $rootScope.$broadcast(hubListenerNames.showNewQuestion, question);
                 $rootScope.$apply();
             },

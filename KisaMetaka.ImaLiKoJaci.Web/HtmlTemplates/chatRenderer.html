@@ -1,3 +1,9 @@
 ﻿<div ng-repeat="message in messages">
-    [{{message.Timestamp | time}}] {{message.User.DisplayName}}: {{message.Answer}}
+    <div ng-if="message.Answer.length">
+        <p>[{{message.Timestamp | time}}] {{message.User.DisplayName}}: {{message.Answer}}</p>
+    </div>
+    <div ng-if="message.Lyrics">
+        <p>KM BOT: <strong>{{message.Lyrics.Question}}</strong></p>
+        <p>KM BOT: <strong>{{message.Lyrics.Answer | hiddenAnswer}}</strong></p>
+    </div>
 </div>

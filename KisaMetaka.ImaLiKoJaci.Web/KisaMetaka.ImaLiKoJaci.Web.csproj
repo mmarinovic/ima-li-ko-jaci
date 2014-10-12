@@ -166,8 +166,10 @@
     </Compile>
     <Compile Include="Hubs\PublicHub.cs" />
     <Compile Include="Models\Chat\AnswerModel.cs" />
+    <Compile Include="Models\Chat\QuestionModel.cs" />
     <Compile Include="Models\Chat\SendAnswerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timers\ChatLogicTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -178,6 +180,7 @@
     <Content Include="HtmlTemplates\chatRenderer.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <Content Include="Scripts\src\enums\hubListenerNames.js" />
+    <Content Include="Scripts\src\filters\lyrics.js" />
     <Content Include="Scripts\src\filters\dateTime.js" />
     <Content Include="Scripts\src\repositories\chatRepository.js" />
     <Content Include="Scripts\src\services\publicChatHub.js" />
