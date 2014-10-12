@@ -1,17 +1,22 @@
 ﻿<div ng-repeat="message in messages">
     <div ng-if="message.Type == 1">
-        [{{message.Timestamp | time}}] {{message.User.DisplayName}}: <strong>{{message.Text}}</strong>
+        <span class="messageInfo">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span> 
+        <span class="question">{{message.Text}}</span>
     </div>
     <div ng-if="message.Type == 2">
-        [{{message.Timestamp | time}}] {{message.User.DisplayName}}: Točan odgovor je: <strong>{{message.Text}}</strong>
+        <span class="messageInfo">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span> 
+        Točan odgovor je: <span class="correctAnswer">{{message.Text}}</span>
     </div>
     <div ng-if="message.Type == 3">
-        [{{message.Timestamp | time}}] {{message.User.DisplayName}}: {{message.Text}}
+        <span class="messageInfo">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span> 
+        <span class="userAnswer">{{message.Text}}</span>
     </div>
     <div ng-if="message.Type == 4">
-        [{{message.Timestamp | time}}] {{message.User.DisplayName}}: <i>{{message.Text}}</i>
+        <span class="messageInfo">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span> 
+        <span class="info">{{message.Text}}</span>
     </div>
     <div ng-if="message.Type == 5">
-        [{{message.Timestamp | time}}] {{message.User.DisplayName}}: <strong>{{message.Text}}</strong>
+        <span class="messageInfo">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span> 
+        <span class="winningAnswer">{{message.Text}}</span>
     </div>
 </div>

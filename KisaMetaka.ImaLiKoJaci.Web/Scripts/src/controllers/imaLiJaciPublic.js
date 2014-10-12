@@ -1,7 +1,5 @@
 ﻿imaLiJaciModul.controller('imaLiJaciPublic', ['$scope', 'publicChatHub', 'hubListenerNames', function ($scope, publicChatHub, hubListenerNames) {
-
-    $scope.message = "Ima li tko jaci?";
-
+    
     function Song(url, fromSecond, toSecond) {
         this.url = url;
         this.fromSecond = fromSecond;

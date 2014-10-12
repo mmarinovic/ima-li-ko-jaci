@@ -13,7 +13,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
             this.Id = lyrics.Id;
             this.Question = lyrics.Question;
             this.Answer = lyrics.Answer;
-            this.HiddenAnswer = Text.GetHiddenText(lyrics.Answer);
+            this.HiddenAnswer = lyrics.Answer.GetHiddenText();
             this.FromSecond = lyrics.FromSecond;
             this.ToSecond = lyrics.ToSecond;
             this.ScoreValue = lyrics.ScoreValue;

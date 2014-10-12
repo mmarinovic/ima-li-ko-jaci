@@ -1,5 +1,5 @@
 ﻿
 <form ng-submit="sendAnswer(answer)">
     <input type="text" ng-model="answer" />
-    <input type="submit" class="btn btn-success" value="Send" />
+    <input type="submit" class="btn btn-success" ng-disabled="!answer.length" value="Send" />
 </form>

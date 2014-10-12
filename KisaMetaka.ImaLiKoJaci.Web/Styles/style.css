@@ -1,0 +1,26 @@
+﻿.messageInfo {
+    font-weight: 800;
+}
+
+.question {
+    font-weight: 800;
+    color: blue;
+    white-space: pre;
+}
+
+.correctAnswer {
+    font-weight: 800;
+    color: green;
+}
+
+.userAnswer {
+}
+
+.info {
+    font-style: italic;
+}
+
+.winningAnswer {
+    font-weight: 800;
+    color: green;
+}
