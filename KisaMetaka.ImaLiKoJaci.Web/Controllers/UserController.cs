@@ -9,7 +9,6 @@ using KisaMetaka.ImaLiKoJaci.Web.Models.User;
 
 namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
 {
-    [Authorize]
     public class UserController : ApiController
     {
         private readonly IUserRepository _userRepository;
@@ -23,7 +22,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
             _loginService = loginService;
         }
 
-        [HttpPut]
+        [HttpPut, Authorize]
         public HttpStatusCode Update(UserUpdateModel model)
         {
             var currentUser = _loginService.TryGetSignedInUser();
