@@ -33,10 +33,9 @@
 
                 function stopAtPosition(stopPosition) {
 
-                    var stopPositionInSeconds = convertToSeconds(stopPosition);
                     $scope.$watch('answerPlayer.currentTime', function(currentTime) {
 
-                        if (currentTime >= stopPositionInSeconds) {
+                        if (currentTime >= stopPosition) {
 
                             $(audioElement).animate({ volume: 0 }, 2000);
                         }
@@ -45,20 +44,10 @@
 
                 function setStartPosition(startPosition) {
 
-                    var startPositionInSeconds = convertToSeconds(startPosition);
                     $scope.answerPlayer.on('loadedmetadata', function () {
-                        $scope.answerPlayer.seek(startPositionInSeconds);
+                        $scope.answerPlayer.seek(startPosition);
                     });
                 };
-
-                function convertToSeconds(input) {
-
-                    var parts = input.split(':'),
-                        minutes = +parts[0],
-                        seconds = +parts[1];
-
-                    return (minutes * 60 + seconds).toFixed(6);
-                }
 
                 $scope.$watch('answerPlayer', function (answerPlayer) {
                     
