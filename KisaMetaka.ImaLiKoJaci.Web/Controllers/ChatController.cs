@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Http;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Services;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.Services.Helpers;
 using KisaMetaka.ImaLiKoJaci.Web.Hubs;
 using KisaMetaka.ImaLiKoJaci.Web.Models.Chat;
 
@@ -23,6 +24,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
 
             var answerModel = new AnswerModel(user, model.Answer);
 
+            var normalizedInput = model.Answer.RemoveDiacritics();
             PublicHub.SendAnswer(answerModel);
         }
     }
