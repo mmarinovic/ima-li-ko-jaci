@@ -19,7 +19,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Song
 
         public string Url
         {
-            get { return string.Format("/Assets/{0}", this.FileName); }
+            get { return string.Format("/Assets/Songs/{0}", this.FileName); }
         }
     }
 }
