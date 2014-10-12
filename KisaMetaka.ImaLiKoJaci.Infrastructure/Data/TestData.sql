@@ -7,6 +7,8 @@ INSERT [dbo].[Songs] ([Id], [Title], [FileName]) VALUES (1, N'Mirela Holy', N'mi
 GO
 INSERT [dbo].[Songs] ([Id], [Title], [FileName]) VALUES (2, N'Pljačkam turiste', N'pljackam-turiste.mp3')
 GO
+INSERT [dbo].[Songs] ([Id], [Title], [FileName]) VALUES (3, N'Učka učka', N'ucka-ucka.mp3')
+GO
 SET IDENTITY_INSERT [dbo].[Songs] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Lyrics] ON 
@@ -25,6 +27,8 @@ GO
 INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (8, N'liti kad si u splitu kad ti triba trava', N'nađi me u biloj majici bez rukava', 19, 23, 10, 2)
 GO
 INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (9, N'stalno žrtve smjeran dok po rivi se gegan ', N'ako nešto tribaš brate nema čega nemam', 64, 68, 10, 2)
+GO
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (10, N's dvi kune te pošaljen po veliki topli', N'ako ne vratiš ostatak batine ćeš dobit', 114, 116, 20, 3)
 GO
 SET IDENTITY_INSERT [dbo].[Lyrics] OFF
 GO
