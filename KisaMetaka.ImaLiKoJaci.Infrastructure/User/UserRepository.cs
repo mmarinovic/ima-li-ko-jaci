@@ -73,7 +73,6 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
         {
             return
                 _context.Users
-                        .Where(u => u.TotalScore > 0)
                         .OrderByDescending(u => u.TotalScore)
                         .ToList()
                         .Select(u => new UserDto(u))
