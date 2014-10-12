@@ -14,7 +14,7 @@ INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreVal
 INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (N'liti kad si u splitu kad ti triba trava', N'nađi me u biloj majici bez rukava', 19, 23, 10, 2)
 INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (N'stalno žrtve smjeran dok po rivi se gegan ', N'ako nešto tribaš brate nema čega nemam', 64, 68, 10, 2)
 INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES ( N's dvi kune te pošaljen po veliki topli', N'ako ne vratiš ostatak batine ćeš dobit', 114, 116, 20, 3)
-INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES ( N'non-stop kendan, kendan non-stop', N'pušin dop, držin misu ka pop ', 65, 67, 10, 3)
+INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES ( N'non-stop kendan, kendan non-stop', N'pušin dop držin misu ka pop ', 66, 68, 10, 3)
 INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES ( N'bičve armani, mudante prada ', N'u pandurskoj škodi kružin priko grada', 35, 38, 10, 3)
 
 GO
