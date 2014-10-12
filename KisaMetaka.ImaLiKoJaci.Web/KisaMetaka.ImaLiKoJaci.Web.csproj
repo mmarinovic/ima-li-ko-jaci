@@ -183,6 +183,7 @@
     <Content Include="Assets\Images\Single-Bullet-icon.png" />
     <Content Include="Assets\Songs\mirela-holy.mp3" />
     <Content Include="Assets\Songs\pljackam-turiste.mp3" />
+    <Content Include="Assets\Songs\ucka-ucka.mp3" />
     <Content Include="Global.asax" />
     <Content Include="HtmlTemplates\answerPlayer.html" />
     <Content Include="HtmlTemplates\chatInput.html" />
