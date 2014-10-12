@@ -207,6 +207,7 @@
     <Content Include="Scripts\src\services\publicChatHub.js" />
     <Content Include="Scripts\vendor\angular-media-player.js" />
     <Content Include="Scripts\vendor\angular-resource.min.js" />
+    <Content Include="Scripts\vendor\angular-scroll-glue.js" />
     <Content Include="Scripts\vendor\jquery.signalR-2.1.2.min.js" />
     <Content Include="Scripts\src\app-states.js" />
     <Content Include="Scripts\src\app.js" />

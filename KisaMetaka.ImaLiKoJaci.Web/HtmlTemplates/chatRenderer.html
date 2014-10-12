@@ -1,5 +1,5 @@
 ﻿
-<div class="messages">
+<div class="messages" scroll-glue>
     <div ng-repeat="message in messages">
         <div ng-if="message.Type == 1">
             <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
