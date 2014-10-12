@@ -73,6 +73,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
         {
             return
                 _context.Users
+                        .Where(u => u.FacebookId != "bot")
                         .OrderByDescending(u => u.TotalScore)
                         .ToList()
                         .Select(u => new UserDto(u))
