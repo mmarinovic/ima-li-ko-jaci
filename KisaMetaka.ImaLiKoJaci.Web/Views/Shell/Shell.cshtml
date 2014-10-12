@@ -6,7 +6,8 @@
         <title>Ima li ko jači?</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="~/Styles/style.css" />
+        <link href="~/Styles/cyborg-bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Styles/bootstrap-override.css" rel="stylesheet" />
 
         <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="~/Scripts/vendor/jquery.signalR-2.1.2.min.js"></script>
@@ -42,7 +43,6 @@
     <body>
         <header>
             <main-navigation></main-navigation>
-            <signed-in-user-info></signed-in-user-info>
         </header>
         <div class="container" ui-view></div>
     </body>

@@ -211,7 +211,8 @@
     <Content Include="Scripts\vendor\angular-signalr-hub-min.js" />
     <Content Include="Scripts\vendor\angular-ui-router.min.js" />
     <Content Include="Scripts\vendor\angular-v1.3.0-rc.5.min.js" />
-    <Content Include="Styles\style.css" />
+    <Content Include="Styles\bootstrap-override.css" />
+    <Content Include="Styles\cyborg-bootstrap-theme.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

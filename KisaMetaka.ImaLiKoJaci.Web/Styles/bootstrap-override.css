@@ -1,0 +1,29 @@
+﻿body,html {
+    height: 100%;
+    width: 100%;
+}
+.container, .chat {
+    height: 90%;
+}
+
+.chat .well {
+    height: 90%;
+}
+
+.chat .well .form-horizontal {
+    position: relative;
+    height: 100%;
+}
+.chat .well .form-horizontal footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.chat .well .form-horizontal footer input[type="text"] {
+    width: 90%;
+}
+.chat .messages {
+    overflow-y: scroll;
+    height: 90%;
+}

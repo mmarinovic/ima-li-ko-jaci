@@ -1,8 +1,27 @@
-﻿<ul>
-    <li><a ui-sref="imaLiJaciPublic">Ima li ko jači?</a></li>
-    <li><a ui-sref="imaLiJaciTutorial">Ima li jači tutorial?</a></li>
-    <li><a href="#">Tvrda ljestvica</a></li>
-    <li ng-if="isUserSignedIn"><a ui-sref="editProfile">Namaži profil</a></li>
-    <li ng-if="!isUserSignedIn"><a href="/login" target="_self">Prijavi se i budi najbolji</a></li>
-    <li ng-if="isUserSignedIn"><a href="/logout" target="_self">Odjebi život</a></li>
-</ul>
+﻿<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="imaLiJaciPublic">Ima li tko jači?</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="imaLiJaciTutorial">Ima li jači tutorial?</a></li>
+                <li><a href="#">Tvrda ljestvica</a></li>
+                <li ng-if="isUserSignedIn"><a ui-sref="editProfile">Namaži profil</a></li>
+                <li ng-if="!isUserSignedIn"><a href="/login" target="_self">Prijavi se i budi najbolji</a></li>
+                <li ng-if="isUserSignedIn"><a href="/logout" target="_self">Odjebi život</a></li>
+            </ul>
+            <p class="navbar-text pull-right">
+                <signed-in-user-info></signed-in-user-info>
+            </p>
+        </div>
+    </div>
+</nav>
