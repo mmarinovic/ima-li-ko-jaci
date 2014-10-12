@@ -1,5 +1,6 @@
 ﻿
+<span ng-if="!isUserSignedIn">Legendo, <a href="/login" target="_self">prijavi se priko FEJSA</a> da moš pisat</span>
 <form ng-submit="sendAnswer(answer)">
-    <input type="text" ng-model="answer" />
-    <input type="submit" class="btn btn-success" ng-disabled="!answer.length" value="Send" />
+    <input type="text" ng-model="answer" ng-disabled="!isUserSignedIn" />
+    <input type="submit" class="btn btn-success" ng-disabled="!answer.length || !isUserSignedIn" value="Send" />
 </form>

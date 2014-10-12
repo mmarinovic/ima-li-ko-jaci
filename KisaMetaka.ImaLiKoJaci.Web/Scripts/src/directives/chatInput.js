@@ -7,7 +7,9 @@
             scope: {},
             templateUrl: '/HtmlTemplates/chatInput.html',
 
-            controller: ['$scope', 'chatRepository', function ($scope, chatRepository) {
+            controller: ['$scope', 'chatRepository', '$currentUser', function ($scope, chatRepository, $currentUser) {
+
+                $scope.isUserSignedIn = !!$currentUser;
 
                 $scope.sendAnswer = function(answer) {
                     chatRepository.sendAnswer(answer);
