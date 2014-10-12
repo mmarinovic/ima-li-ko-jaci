@@ -251,6 +251,9 @@
   <ItemGroup>
     <Content Include="Scripts\vendor\kisa-metaka-v.0.3.1.min.js" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Release FS.pubxml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

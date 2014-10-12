@@ -2,3 +2,7 @@
     Pozdrav <strong>{{currentUser.DisplayName}}</strong> 
     <span class="text-success">({{currentUser.TotalScore}})</span>, ima li tko jači od tebe?
 </span>
+
+<a ng-if="!currentUser" class="btn btn-primary" href="/login" target="_self">
+    Prijavi se sa fejson, legendo
+</a>
