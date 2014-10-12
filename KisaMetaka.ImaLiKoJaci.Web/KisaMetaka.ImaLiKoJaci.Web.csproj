@@ -185,7 +185,11 @@
     <Content Include="HtmlTemplates\chatRenderer.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <Content Include="HtmlTemplates\imaLiJaciTutorial.html" />
+    <Content Include="HtmlTemplates\mainNavigation.html" />
+    <Content Include="HtmlTemplates\signedInUserInfo.html" />
     <Content Include="Scripts\src\directives\answerPlayer.js" />
+    <Content Include="Scripts\src\directives\mainNavigation.js" />
+    <Content Include="Scripts\src\directives\signedInUserInfo.js" />
     <Content Include="Scripts\src\enums\hubListenerNames.js" />
     <Content Include="Scripts\src\filters\lyrics.js" />
     <Content Include="Scripts\src\filters\dateTime.js" />

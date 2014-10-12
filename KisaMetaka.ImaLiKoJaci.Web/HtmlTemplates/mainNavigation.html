@@ -1,0 +1,7 @@
+﻿<ul>
+    <li><a ui-sref="imaLiJaciPublic">Ima li ko jači?</a></li>
+    <li><a ui-sref="imaLiJaciTutorial">Ima li jači tutorial?</a></li>
+    <li ng-if="isUserSignedIn"><a href="#" target="_self">Namaži profil</a></li>
+    <li ng-if="!isUserSignedIn"><a href="/login" target="_self">Prijavi se i budi najbolji</a></li>
+    <li ng-if="isUserSignedIn"><a href="/logout" target="_self">Odjebi život</a></li>
+</ul>

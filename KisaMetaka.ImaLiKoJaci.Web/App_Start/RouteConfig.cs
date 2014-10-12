@@ -11,6 +11,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web
 
             routes.MapRoute("FacebookLogin", "login", new { controller = "Login", action = "FacebookLogin" });
             routes.MapRoute("FacebookCallback", "fbcallback", new { controller = "Login", action = "FacebookCallback" });
+            routes.MapRoute("LogOut", "logout", new { controller = "Login", action = "LogOut" });
 
             routes.MapRoute("Tutorial", "tutorial", new { controller = "Shell", action = "Shell" });
 

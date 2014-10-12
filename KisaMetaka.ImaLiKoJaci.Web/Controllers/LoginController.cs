@@ -71,5 +71,12 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
 
             return Redirect("/");
         }
+
+        public ActionResult LogOut()
+        {
+            _loginService.SignOut();
+
+            return Redirect("/");
+        }
     }
 }

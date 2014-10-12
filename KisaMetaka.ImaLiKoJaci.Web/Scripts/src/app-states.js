@@ -1,5 +1,5 @@
 ﻿imaLiJaciModul.config([
-    '$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
+    '$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
     
         var imaLiJaciPublic = {
             name: 'imaLiJaciPublic',
@@ -18,5 +18,6 @@
                       .state(imaLiJaciTutorial);
 
         $locationProvider.html5Mode(true);
+        $urlRouterProvider.otherwise('/');
     }
 ]);
