@@ -1,2 +1,5 @@
-﻿<input type="text" ng-model="answer" />
-<button class="btn btn-default" ng-click="sendAnswer(answer)">Send</button>
+﻿
+<form ng-submit="sendAnswer(answer)">
+    <input type="text" ng-model="answer" />
+    <input type="submit" class="btn btn-success" value="Send" />
+</form>

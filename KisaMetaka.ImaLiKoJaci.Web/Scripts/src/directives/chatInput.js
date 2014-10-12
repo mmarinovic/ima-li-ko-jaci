@@ -11,6 +11,7 @@
 
                 $scope.sendAnswer = function(answer) {
                     chatRepository.sendAnswer(answer);
+                    $scope.answer = "";
                 };
             }]
         };
