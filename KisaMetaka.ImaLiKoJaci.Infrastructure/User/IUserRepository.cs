@@ -6,6 +6,8 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
     {
         void Create(string displayName, string facebookId);
         void Update(int id, string displayName);
+        void AddScore(int id, int scoreValue);
+
         UserDto TryGet(string facebookId);
         IEnumerable<UserDto> GetForLeaderboard();
     }

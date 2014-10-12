@@ -45,6 +45,20 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
             }
         }
 
+        public void AddScore(int id, int scoreValue)
+        {
+            if (id <= 0) { throw new ArgumentException("id"); }
+            if (scoreValue <= 0) { throw new ArgumentException("scoreValue"); }
+
+            var userToUpdate = _context.Users.SingleOrDefault(u => u.Id == id);
+
+            if (userToUpdate != null)
+            {
+                userToUpdate.TotalScore += scoreValue;
+                _context.SaveChanges();
+            }
+        }
+
         public UserDto TryGet(string facebookId)
         {
             if (string.IsNullOrWhiteSpace(facebookId)) { throw new ArgumentException("facebookId"); }

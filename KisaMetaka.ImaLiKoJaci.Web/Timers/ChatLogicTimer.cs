@@ -69,9 +69,9 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
             }
         }
 
-        public void CheckWinningAnswer(string answer, UserDto user)
+        public bool CheckWinningAnswer(string answer, UserDto user)
         {
-            if (!_isRoundInProgress) { return; }
+            if (!_isRoundInProgress) { return false; }
 
             var isWinningAnswer = answer.LyricEquals(_currentLyrics.Answer);
 
@@ -82,8 +82,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
 
                 PublicHub.SendMessage(winningMessageModel);
 
-                // TODO: Update user score
+                _userRepository.AddScore(user.Id, _currentLyrics.ScoreValue);
             }
+
+            return isWinningAnswer;
         }
 
         public void Stop(bool immediate)

@@ -3,7 +3,7 @@
     <div ng-repeat="message in messages">
         <div ng-if="message.Type == 1">
             <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-            <span class="text-primary">{{message.Text}}</span>
+            <span class="text-primary question">{{message.Text}}</span>
         </div>
         <div ng-if="message.Type == 2">
             <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
@@ -11,7 +11,7 @@
         </div>
         <div ng-if="message.Type == 3">
             <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-            <span>{{message.Text}}</span>
+            <span class="userAnswer">{{message.Text}}</span>
         </div>
         <div ng-if="message.Type == 4">
             <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
@@ -19,7 +19,7 @@
         </div>
         <div ng-if="message.Type == 5">
             <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-            <span class="text-success">{{message.Text}}</span>
+            <span class="text-success winningAnswer">{{message.Text}}</span>
         </div>
     </div>
 </div>

@@ -20,9 +20,9 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Helpers
             _timer.Stop(true);
         }
 
-        public static void CheckWinningAnswer(string answer, UserDto user)
+        public static bool CheckWinningAnswer(string answer, UserDto user)
         {
-            _timer.CheckWinningAnswer(answer, user);
+            return _timer.CheckWinningAnswer(answer, user);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
         }
         public override Task OnConnected()
         {
-            var welcomeMessage = new MessageModel(_botUser, "Dobar dan dobra večer, batman u usta ti ga metnem mečem", MessageType.Info);
+            var welcomeMessage = new MessageModel(_botUser, "Dobar dan dobra večer, batman u usta ti ga metnem, mečem", MessageType.Info);
 
             SendMessage(Context.ConnectionId, welcomeMessage);
            

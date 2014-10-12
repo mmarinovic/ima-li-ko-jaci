@@ -24,9 +24,12 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
 
             var messageModel = new MessageModel(user, model.Answer, MessageType.UserAnswer);
 
-            PublicHub.SendMessage(messageModel);
+            var isWinningAnswer = ChatLogicHelper.CheckWinningAnswer(model.Answer, user);
 
-            ChatLogicHelper.CheckWinningAnswer(model.Answer, user);
+            if (!isWinningAnswer)
+            {
+                PublicHub.SendMessage(messageModel);
+            }
         }
     }
 }
