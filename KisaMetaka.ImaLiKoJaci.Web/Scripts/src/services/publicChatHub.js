@@ -19,9 +19,6 @@
                 $rootScope.$broadcast(hubListenerNames.showAnswer, answer);
                 $rootScope.$apply();
             }
-        },
-        errorHandler: function (error) {
-            console.log(error);
         }
     });
 }]);
