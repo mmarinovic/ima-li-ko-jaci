@@ -14,7 +14,7 @@
                 function sendMessage(question) {
                     $scope.messages.push(question);
                 };
-                
+                 
                 $scope.$on(hubListenerNames.sendMessage, function(e, message) {
                     sendMessage(message);
                 });
