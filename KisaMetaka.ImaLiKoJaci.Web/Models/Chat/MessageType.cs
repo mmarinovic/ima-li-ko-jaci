@@ -5,6 +5,7 @@
         Question = 1,
         CorrectAnswer = 2,
         UserAnswer = 3,
-        Info = 4
+        Info = 4,
+        WinningAnswer = 5
     }
 }

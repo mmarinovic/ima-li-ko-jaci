@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Http;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Services;
+using KisaMetaka.ImaLiKoJaci.Web.Helpers;
 using KisaMetaka.ImaLiKoJaci.Web.Hubs;
 using KisaMetaka.ImaLiKoJaci.Web.Models.Chat;
 
@@ -24,6 +25,8 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
             var messageModel = new MessageModel(user, model.Answer, MessageType.UserAnswer);
 
             PublicHub.SendMessage(messageModel);
+
+            ChatLogicHelper.CheckWinningAnswer(model.Answer, user);
         }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System.Web.Hosting;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.User;
 using KisaMetaka.ImaLiKoJaci.Web.Timers;
 
 namespace KisaMetaka.ImaLiKoJaci.Web.Helpers
 {
-    public static class TimerHelper
+    public static class ChatLogicHelper
     {
         private static ChatLogicTimer _timer;
 
@@ -17,6 +18,11 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Helpers
         public static void StopTimer()
         {
             _timer.Stop(true);
+        }
+
+        public static void CheckWinningAnswer(string answer, UserDto user)
+        {
+            _timer.CheckWinningAnswer(answer, user);
         }
     }
 }

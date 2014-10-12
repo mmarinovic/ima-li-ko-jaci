@@ -2,8 +2,6 @@
     .factory('hubListenerNames', function() {
 
         return {
-            showNewQuestion: 'showNewQuestion',
-            showCorrectAnswer: 'showCorrectAnswer',
-            showAnswer: 'showAnswer'
-        }
+            sendMessage: 'sendMessage'
+        };
     });

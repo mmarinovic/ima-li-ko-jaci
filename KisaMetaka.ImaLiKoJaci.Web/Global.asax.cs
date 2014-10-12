@@ -15,7 +15,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            TimerHelper.RegisterTimer();
+            ChatLogicHelper.RegisterTimer();
         }
     }
 }

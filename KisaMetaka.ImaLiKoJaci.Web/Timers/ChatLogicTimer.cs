@@ -33,10 +33,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
             var messageModel = new MessageModel(_botUser, "Pripremite se za novu rundu...", MessageType.Info);
             PublicHub.SendMessage(messageModel);
 
-            _timer = new Timer(_AnnounceWinnerAndSendNewQuestion, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(30));
+            _timer = new Timer(_FinishAndSetupNewRound, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(30));
         }
 
-        private void _AnnounceWinnerAndSendNewQuestion(object state)
+        private void _FinishAndSetupNewRound(object state)
         {
             if (!_isRoundInProgress)
             {
@@ -62,6 +62,22 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
 
                 _isRoundInProgress = false;
                 _StartTimer();
+            }
+        }
+
+        public void CheckWinningAnswer(string answer, UserDto user)
+        {
+            // TODO: Better check
+            var isWinningAnswer = string.Equals(answer, _currentLyrics.Answer, StringComparison.OrdinalIgnoreCase);
+
+            if (isWinningAnswer)
+            {
+                var winningMessage = string.Format("{0} je točno odgovorio za +{1} bodova!", user.DisplayName, _currentLyrics.ScoreValue);
+                var winningMessageModel = new MessageModel(_botUser, winningMessage, MessageType.WinningAnswer);
+
+                PublicHub.SendMessage(winningMessageModel);
+
+                // TODO: Update user score
             }
         }
 

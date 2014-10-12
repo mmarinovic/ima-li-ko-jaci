@@ -11,4 +11,7 @@
     <div ng-if="message.Type == 4">
         [{{message.Timestamp | time}}] {{message.User.DisplayName}}: <i>{{message.Text}}</i>
     </div>
+    <div ng-if="message.Type == 5">
+        [{{message.Timestamp | time}}] {{message.User.DisplayName}}: <strong>{{message.Text}}</strong>
+    </div>
 </div>
