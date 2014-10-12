@@ -30,6 +30,20 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
             _context.SaveChanges();
         }
 
+        public void Update(int id, string displayName)
+        {
+            if (id <= 0) { throw new ArgumentException("id"); }
+            if (string.IsNullOrWhiteSpace(displayName)) { throw new ArgumentException("displayName"); }
+
+            var userToUpdate = _context.Users.SingleOrDefault(u => u.Id == id);
+
+            if (userToUpdate != null)
+            {
+                userToUpdate.DisplayName = displayName;
+                _context.SaveChanges(); 
+            }
+        }
+
         public UserDto TryGet(string facebookId)
         {
             if (string.IsNullOrWhiteSpace(facebookId)) { throw new ArgumentException("facebookId"); }

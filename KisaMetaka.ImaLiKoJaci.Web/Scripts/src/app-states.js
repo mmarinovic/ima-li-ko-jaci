@@ -14,8 +14,15 @@
             templateUrl: '/Htmltemplates/imaLiJaciTutorial.html'
         };
 
+        var editProfile = {
+            name: 'editProfile',
+            url: '/profil/namazi',
+            controller: 'editProfile',
+            templateUrl: '/HtmlTemplates/editProfile.html'
+        }
         $stateProvider.state(imaLiJaciPublic)
-                      .state(imaLiJaciTutorial);
+                      .state(imaLiJaciTutorial)
+                      .state(editProfile);
 
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/');

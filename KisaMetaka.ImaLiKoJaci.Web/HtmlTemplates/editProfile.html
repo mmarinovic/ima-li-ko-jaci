@@ -1,0 +1,8 @@
+﻿<h1>Hello {{user.DisplayName}}</h1>
+
+<form name="profileEditForm" novalidate="" ng-submit="save(user)">
+    
+    <input name="displayName" type="text" ng-model="user.DisplayName" required=""/>
+    
+    <input type="submit" value="Namaži" ng-disabled="profileEditForm.$invalid" />
+</form>
