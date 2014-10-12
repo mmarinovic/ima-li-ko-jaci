@@ -8,7 +8,14 @@
             templateUrl: '/Htmltemplates/imaLiJaciPublic.html'
         };
 
-        $stateProvider.state(imaLiJaciPublic);
+        var imaLiJaciTutorial= {
+            name: 'imaLiJaciTutorial',
+            url: '/tutorial',
+            templateUrl: '/Htmltemplates/imaLiJaciTutorial.html'
+        };
+
+        $stateProvider.state(imaLiJaciPublic)
+                      .state(imaLiJaciTutorial);
 
         $locationProvider.html5Mode(true);
     }

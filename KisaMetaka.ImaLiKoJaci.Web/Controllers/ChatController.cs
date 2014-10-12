@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Http;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Services;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.Services.Helpers;
 using KisaMetaka.ImaLiKoJaci.Web.Hubs;
 using KisaMetaka.ImaLiKoJaci.Web.Models.Chat;
 

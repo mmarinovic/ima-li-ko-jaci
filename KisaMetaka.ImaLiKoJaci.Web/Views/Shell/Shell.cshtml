@@ -12,10 +12,12 @@
         <script src="~/SignalR/hubs"></script>
 
         <script src="~/Scripts/vendor/angular-v1.3.0-rc.5.min.js"></script>
+        <script src="//code.angularjs.org/1.3.0-rc.5/angular-animate.min.js"> </script>
         <script src="/Scripts/vendor/angular-ui-router.min.js"></script>
         <script src="~/Scripts/vendor/angular-resource.min.js"></script>
         <script src="/Scripts/vendor/angular-signalr-hub-min.js"></script>
-
+        <script src="~/Scripts/vendor/angular-media-player.js"></script>
+         
         <script src="/Scripts/src/app.js"></script>
         <script src="/Scripts/src/app-states.js"></script>
         <script src="/Scripts/src/controllers/imaLiJaciPublic.js"></script>
@@ -24,10 +26,17 @@
         <script src="~/Scripts/src/services/publicChatHub.js"></script>
         <script src="~/Scripts/src/directives/chatRenderer.js"></script>
         <script src="~/Scripts/src/directives/chatInput.js"></script>
+        <script src="~/Scripts/src/directives/answerPlayer.js"></script>
         <script src="~/Scripts/src/filters/dateTime.js"></script>
         <script src="~/Scripts/src/filters/lyrics.js"></script>
     </head>
-<body>
-    <div class="container" ui-view></div>
-</body>
+    <body>
+        <header>
+            <ul>
+                <li><a ui-sref="imaLiJaciPublic">Ima li tko jači?</a></li>
+                <li><a ui-sref="imaLiJaciTutorial">Ima li jači tutorial?</a></li>
+            </ul>
+        </header>
+        <div class="container" ui-view></div>
+    </body>
 </html>

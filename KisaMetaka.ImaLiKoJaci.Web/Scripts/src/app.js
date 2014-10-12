@@ -1,1 +1,1 @@
-﻿var imaLiJaciModul = angular.module('imaLiJaciModul', ['ui.router', 'SignalR', 'ngResource']);
+﻿var imaLiJaciModul = angular.module('imaLiJaciModul', ['ui.router', 'SignalR', 'ngResource', 'mediaPlayer', 'ngAnimate']);

@@ -65,6 +65,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
 
                     _userRepository.Create(displayName, facebookId);
                     _loginService.SignIn(facebookId);
+                    return Redirect("/tutorial");
                 }
             }
 

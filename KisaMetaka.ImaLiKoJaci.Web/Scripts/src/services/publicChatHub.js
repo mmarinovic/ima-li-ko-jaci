@@ -9,9 +9,6 @@
                 $rootScope.$broadcast(hubListenerNames.sendMessage, message);
                 $rootScope.$apply();
             }
-        },
-        errorHandler: function (error) {
-            console.log(error);
         }
     });
 }]);
