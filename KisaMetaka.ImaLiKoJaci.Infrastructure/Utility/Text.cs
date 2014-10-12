@@ -47,12 +47,12 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Utility
                 .RemoveDiacriticalChars()
                 .RemoveAllExtraSpace();
 
-            return string.Equals(first, second, StringComparison.OrdinalIgnoreCase);
+            return first.Equals(second, StringComparison.OrdinalIgnoreCase);
         }
 
         public static string RemoveAllExtraSpace(this string str)
         {
-            return Regex.Replace(str, @"\s+", " ");
+            return Regex.Replace(str, @"\s+", " ").Trim(' ');
         }
     }
 }
