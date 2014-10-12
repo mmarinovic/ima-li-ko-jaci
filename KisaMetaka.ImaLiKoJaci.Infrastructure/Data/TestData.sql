@@ -30,6 +30,10 @@ INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [Sc
 GO
 INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (10, N's dvi kune te pošaljen po veliki topli', N'ako ne vratiš ostatak batine ćeš dobit', 114, 116, 20, 3)
 GO
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (11, N'non-stop kendan, kendan non-stop', N'pušin dop, držin misu ka pop ', 65, 67, 10, 3)
+GO
+INSERT [dbo].[Lyrics] ([Id], [Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (12, N'bičve armani, mudante prada ', N'u pandurskoj škodi kružin priko grada', 35, 38, 10, 3)
+GO
 SET IDENTITY_INSERT [dbo].[Lyrics] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Users] ON 
