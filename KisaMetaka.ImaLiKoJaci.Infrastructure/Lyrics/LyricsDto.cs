@@ -1,5 +1,6 @@
 ﻿using System;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Song;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.Utility;
 
 namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
 {
@@ -12,6 +13,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
             this.Id = lyrics.Id;
             this.Question = lyrics.Question;
             this.Answer = lyrics.Answer;
+            this.HiddenAnswer = Text.GetHiddenText(lyrics.Answer);
             this.FromSecond = lyrics.FromSecond;
             this.ToSecond = lyrics.ToSecond;
             this.ScoreValue = lyrics.ScoreValue;
@@ -21,6 +23,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
         public int Id { get; private set; }
         public string Question { get; private set; }
         public string Answer { get; private set; }
+        public string HiddenAnswer { get; private set; }
         public int FromSecond { get; private set; }
         public int ToSecond { get; private set; }
         public int ScoreValue { get; private set; }

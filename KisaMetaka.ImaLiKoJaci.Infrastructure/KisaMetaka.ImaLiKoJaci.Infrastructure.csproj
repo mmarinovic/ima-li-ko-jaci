@@ -94,6 +94,7 @@
     <Compile Include="User\IUserRepository.cs" />
     <Compile Include="User\UserDto.cs" />
     <Compile Include="User\UserRepository.cs" />
+    <Compile Include="Utility\Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Data\DataModel.edmx">
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\DataModel.edmx.sql" />
+    <Content Include="Data\TestData.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

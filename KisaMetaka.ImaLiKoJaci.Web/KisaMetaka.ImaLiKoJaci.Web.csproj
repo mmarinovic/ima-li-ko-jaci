@@ -164,9 +164,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TimerHelper.cs" />
     <Compile Include="Hubs\PublicHub.cs" />
-    <Compile Include="Models\Chat\AnswerModel.cs" />
-    <Compile Include="Models\Chat\QuestionModel.cs" />
+    <Compile Include="Models\Chat\MessageModel.cs" />
+    <Compile Include="Models\Chat\MessageType.cs" />
     <Compile Include="Models\Chat\SendAnswerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Timers\ChatLogicTimer.cs" />

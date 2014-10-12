@@ -21,9 +21,9 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
             var user = _loginService.TryGetSignedInUser();
             if (user == null) { throw new HttpException(403, "User not logged in."); }
 
-            var answerModel = new AnswerModel(user, model.Answer);
+            var messageModel = new MessageModel(user, model.Answer, MessageType.UserAnswer);
 
-            PublicHub.SendAnswer(answerModel);
+            PublicHub.SendMessage(messageModel);
         }
     }
 }

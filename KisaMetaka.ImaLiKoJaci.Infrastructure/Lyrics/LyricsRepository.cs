@@ -16,7 +16,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics
         public LyricsDto GetRandom()
         {
             var lyrics = _context.Lyrics
-                .OrderBy(x => new Guid())
+                .OrderBy(x => Guid.NewGuid())
                 .FirstOrDefault();
 
             if (lyrics == null) { return null; }

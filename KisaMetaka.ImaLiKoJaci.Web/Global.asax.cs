@@ -1,8 +1,7 @@
-﻿using System.Web.Hosting;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
-using KisaMetaka.ImaLiKoJaci.Web.Timers;
+using KisaMetaka.ImaLiKoJaci.Web.Helpers;
 
 namespace KisaMetaka.ImaLiKoJaci.Web
 {
@@ -16,7 +15,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            HostingEnvironment.RegisterObject(new ChatLogicTimer());
+            TimerHelper.RegisterTimer();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Web.Hosting;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.User;
 using KisaMetaka.ImaLiKoJaci.Web.Hubs;
 using KisaMetaka.ImaLiKoJaci.Web.Models.Chat;
 using StructureMap;
@@ -11,33 +12,62 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
     public class ChatLogicTimer : IRegisteredObject
     {
         private Timer _timer;
+        private bool _isRoundInProgress;
+        private LyricsDto _currentLyrics;
+        private readonly UserDto _botUser;
         private readonly ILyricsRepository _lyricsRepository;
+        private readonly IUserRepository _userRepository;
 
         public ChatLogicTimer()
         {
             _lyricsRepository = ObjectFactory.GetInstance<ILyricsRepository>();
+            _userRepository = ObjectFactory.GetInstance<IUserRepository>();
+
+            _botUser = _userRepository.TryGet("bot");
 
             _StartTimer();
         }
 
         private void _StartTimer()
         {
-            _timer = new Timer(_AnnounceWinnerAndSendNewQuestion, null, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(10));
+            var messageModel = new MessageModel(_botUser, "Pripremite se za novu rundu...", MessageType.Info);
+            PublicHub.SendMessage(messageModel);
+
+            _timer = new Timer(_AnnounceWinnerAndSendNewQuestion, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(30));
         }
 
         private void _AnnounceWinnerAndSendNewQuestion(object state)
         {
-            var lyrics = _lyricsRepository.GetRandom();
-            var questionModel = new QuestionModel(lyrics);
+            if (!_isRoundInProgress)
+            {
+                _currentLyrics = _lyricsRepository.GetRandom();
 
-            PublicHub.ShowNewQuestion(questionModel);
+                var questionMessageModel = new MessageModel(_botUser, _currentLyrics.Question, MessageType.Question);
+                PublicHub.SendMessage(questionMessageModel);
+
+                var hiddenAnswerMessageModel = new MessageModel(_botUser, _currentLyrics.HiddenAnswer, MessageType.Question);
+                PublicHub.SendMessage(hiddenAnswerMessageModel);
+
+                _isRoundInProgress = true;
+            }
+            else
+            {
+                this.Stop(true);
+
+                var messageModel = new MessageModel(_botUser, "Runda završena...", MessageType.Info);
+                PublicHub.SendMessage(messageModel);
+
+                var correctAnswerMessageModel = new MessageModel(_botUser, _currentLyrics.Answer, MessageType.CorrectAnswer);
+                PublicHub.SendMessage(correctAnswerMessageModel);
+
+                _isRoundInProgress = false;
+                _StartTimer();
+            }
         }
 
         public void Stop(bool immediate)
         {
             _timer.Dispose();
-
-            HostingEnvironment.UnregisterObject(this);
         }
     }
 }

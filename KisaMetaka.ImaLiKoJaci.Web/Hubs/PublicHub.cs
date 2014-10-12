@@ -7,22 +7,10 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Hubs
     [HubName("publicChat")]
     public class PublicHub : Hub
     {
-        public static void ShowNewQuestion(QuestionModel model)
+        public static void SendMessage(MessageModel model)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.showNewQuestion(model);
-        }
-
-        public static void ShowCorrectAnswer(string winnerDisplayName, string answer)
-        {
-            var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.showCorrectAnswer(winnerDisplayName, answer);
-        }
-
-        public static void SendAnswer(AnswerModel model)
-        {
-            var hubContext = GlobalHost.ConnectionManager.GetHubContext<PublicHub>();
-            hubContext.Clients.All.sendAnswer(model);
+            hubContext.Clients.All.sendMessage(model);
         }
     }
 }
