@@ -34,7 +34,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
             var messageModel = new MessageModel(_botUser, "Pripremite se za novu rundu...", MessageType.Info);
             PublicHub.SendMessage(messageModel);
 
-            _timer = new Timer(_FinishAndSetupNewRound, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(12));
+            _timer = new Timer(_FinishAndSetupNewRound, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(30));
         }
 
         private void _FinishAndSetupNewRound(object state)
