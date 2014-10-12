@@ -1,23 +1,25 @@
 ﻿
-<div ng-repeat="message in messages">
-    <div ng-if="message.Type == 1">
-        <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-        <span class="text-primary">{{message.Text}}</span>
-    </div>
-    <div ng-if="message.Type == 2">
-        <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-        Točan odgovor je: <span class="text-success">{{message.Text}}</span>
-    </div>
-    <div ng-if="message.Type == 3">
-        <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-        <span>{{message.Text}}</span>
-    </div>
-    <div ng-if="message.Type == 4">
-        <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-        <span class="info">{{message.Text}}</span>
-    </div>
-    <div ng-if="message.Type == 5">
-        <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
-        <span class="text-success">{{message.Text}}</span>
+<div class="messages">
+    <div ng-repeat="message in messages">
+        <div ng-if="message.Type == 1">
+            <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
+            <span class="text-primary">{{message.Text}}</span>
+        </div>
+        <div ng-if="message.Type == 2">
+            <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
+            Točan odgovor je: <span class="text-success">{{message.Text}}</span>
+        </div>
+        <div ng-if="message.Type == 3">
+            <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
+            <span>{{message.Text}}</span>
+        </div>
+        <div ng-if="message.Type == 4">
+            <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
+            <span class="info">{{message.Text}}</span>
+        </div>
+        <div ng-if="message.Type == 5">
+            <span class="text-info">[{{message.Timestamp | time}}] {{message.User.DisplayName}}:</span>
+            <span class="text-success">{{message.Text}}</span>
+        </div>
     </div>
 </div>

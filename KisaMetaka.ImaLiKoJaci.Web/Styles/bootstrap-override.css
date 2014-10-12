@@ -20,6 +20,11 @@
     left: 0;
     right: 0;
 }
+
+.chat .well .form-horizontal fieldset {
+      height: 90%;
+}
+
 .chat .well .form-horizontal footer input[type="text"] {
     width: 90%;
 }
