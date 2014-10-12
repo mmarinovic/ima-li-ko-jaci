@@ -23,9 +23,8 @@
                 }
 
                 function setupPlayer(url, type) {
-
                     resetPlayer();
-                    $scope.answerPlayer.load([{ src: url, type: type, media: '.css.media.query' }, false]);
+                    $scope.answerPlayer.load([{ src: url, type: type, media: '.css.media.query' }], false);
 
                     setStartPosition();
                     $scope.answerPlayer.play();
