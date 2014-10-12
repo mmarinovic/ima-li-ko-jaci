@@ -6,6 +6,7 @@ using KisaMetaka.ImaLiKoJaci.Web.Models.User;
 
 namespace KisaMetaka.ImaLiKoJaci.Web.Controllers
 {
+    [Authorize]
     public class UserController : ApiController
     {
         private readonly IUserRepository _userRepository;

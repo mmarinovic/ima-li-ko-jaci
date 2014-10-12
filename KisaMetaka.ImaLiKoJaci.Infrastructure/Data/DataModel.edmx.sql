@@ -1,9 +1,9 @@
 
 -- --------------------------------------------------
--- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/11/2014 22:36:42
--- Generated from EDMX file: C:\Dev\ima-li-ko-jaci\KisaMetaka.ImaLiKoJaci.Infrastructure\Data\DataModel.edmx
+-- Date Created: 10/12/2014 20:34:59
+-- Generated from EDMX file: D:\Projects\ima-li-ko-jaci\KisaMetaka.ImaLiKoJaci.Infrastructure\Data\DataModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,23 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_AS_Song_Lyrics]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Lyrics] DROP CONSTRAINT [FK_AS_Song_Lyrics];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[dbo].[Songs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Songs];
+GO
+IF OBJECT_ID(N'[dbo].[Lyrics]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Lyrics];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -41,7 +53,7 @@ GO
 CREATE TABLE [dbo].[Songs] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Title] nvarchar(max)  NOT NULL,
-    [YoutubeUrl] nvarchar(max)  NOT NULL
+    [FileName] nvarchar(max)  NOT NULL
 );
 GO
 

@@ -30,7 +30,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="YoutubeUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Lyrics">
     <Key>
@@ -85,7 +85,7 @@
           </Key>
           <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
           <Property Type="String" Name="Title" Nullable="false" />
-          <Property Type="String" Name="YoutubeUrl" Nullable="false" />
+          <Property Type="String" Name="FileName" Nullable="false" />
           <NavigationProperty Name="Lyrics" Relationship="KisaMetaka.ImaLiKoJaci.Data.AS_Song_Lyrics" FromRole="Song" ToRole="Lyrics" />
         </EntityType>
         <EntityType Name="Lyrics">
@@ -135,7 +135,7 @@
         <MappingFragment StoreEntitySet="Songs">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="YoutubeUrl" ColumnName="YoutubeUrl" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -167,6 +167,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

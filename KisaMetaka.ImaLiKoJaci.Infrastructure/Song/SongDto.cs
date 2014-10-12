@@ -10,11 +10,16 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.Song
 
             this.Id = song.Id;
             this.Title = song.Title;
-            this.YoutubeUrl = song.YoutubeUrl;
+            this.FileName = song.FileName;
         }
 
         public int Id { get; private set; }
         public string Title { get; private set; }
-        public string YoutubeUrl { get; private set; }
+        public string FileName { get; private set; }
+
+        public string Url
+        {
+            get { return string.Format("/Assets/{0}", this.FileName); }
+        }
     }
 }

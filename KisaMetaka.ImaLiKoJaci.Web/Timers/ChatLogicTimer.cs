@@ -59,7 +59,7 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
                 PublicHub.SendMessage(messageModel);
 
                 var correctAnswerMessageModel = new CorrectAnswerMessageModel(
-                    _botUser, _currentLyrics.Answer, MessageType.CorrectAnswer, _currentLyrics.Song.YoutubeUrl, _currentLyrics.FromSecond, _currentLyrics.ToSecond
+                    _botUser, _currentLyrics.Answer, MessageType.CorrectAnswer, _currentLyrics.Song.Url, _currentLyrics.FromSecond, _currentLyrics.ToSecond
                     );
 
                 PublicHub.SendMessage(correctAnswerMessageModel);

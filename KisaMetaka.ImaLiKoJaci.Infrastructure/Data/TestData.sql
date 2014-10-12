@@ -3,9 +3,9 @@ GO
 SET IDENTITY_INSERT [dbo].[Songs] ON 
 
 GO
-INSERT [dbo].[Songs] ([Id], [Title], [YoutubeUrl]) VALUES (1, N'Mirela Holy', N'/Assets/mirela-holy.mp3')
+INSERT [dbo].[Songs] ([Id], [Title], [FileName]) VALUES (1, N'Mirela Holy', N'mirela-holy.mp3')
 GO
-INSERT [dbo].[Songs] ([Id], [Title], [YoutubeUrl]) VALUES (2, N'Pljačkam turiste', N'/Assets/pljackam-turiste.mp3')
+INSERT [dbo].[Songs] ([Id], [Title], [FileName]) VALUES (2, N'Pljačkam turiste', N'pljackam-turiste.mp3')
 GO
 SET IDENTITY_INSERT [dbo].[Songs] OFF
 GO
