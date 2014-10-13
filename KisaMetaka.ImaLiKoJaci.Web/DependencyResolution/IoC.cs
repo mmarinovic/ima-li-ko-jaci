@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
+using KisaMetaka.ImaLiKoJaci.Web.Helpers;
 using StructureMap;
 
 namespace KisaMetaka.ImaLiKoJaci.Web.DependencyResolution {
@@ -24,6 +25,8 @@ namespace KisaMetaka.ImaLiKoJaci.Web.DependencyResolution {
             ObjectFactory.Initialize(x =>
                         {
                             x.IncludeRegistry<Infrastructure.DependencyRegistry>();
+
+                            x.For<IHubConnectionsStorage>().Use<HubConnectionsStorage>().Singleton();
 
                             x.Scan(scanner =>
                             {

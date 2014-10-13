@@ -1,4 +1,4 @@
-﻿imaLiJaciModul.controller('imaLiJaciPublic', ['$scope', 'publicChatHub', 'hubListenerNames', function ($scope, publicChatHub, hubListenerNames) {
+﻿imaLiJaciModul.controller('imaLiJaciPublic', ['$scope', 'hubListenerNames', function ($scope, hubListenerNames) {
     
     function Song(url, fromSecond, toSecond) {
         this.url = url;

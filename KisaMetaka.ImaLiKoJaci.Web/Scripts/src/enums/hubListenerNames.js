@@ -2,6 +2,7 @@
     .factory('hubListenerNames', function() {
 
         return {
-            sendMessage: 'sendMessage'
+            sendMessage: 'sendMessage',
+            updateConnectionsInfo: 'updateConnectionsInfo'
     }
 });

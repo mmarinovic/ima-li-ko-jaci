@@ -38,6 +38,7 @@
         <script src="~/Scripts/src/directives/chatInput.js"></script>
         <script src="~/Scripts/src/directives/answerPlayer.js"></script>
         <script src="~/Scripts/src/directives/bulletRain.js"></script>
+        <script src="~/Scripts/src/directives/connectedUsersInfo.js"></script>
         <script src="~/Scripts/src/filters/dateTime.js"></script>
         <script src="~/Scripts/src/filters/lyrics.js"></script>
         
@@ -52,6 +53,9 @@
         <header>
             <main-navigation></main-navigation>
         </header>
+
+        <connected-users-info users="connectedUsers"></connected-users-info>
+
         <div class="container" ui-view></div>
     </body>
 </html>

@@ -166,6 +166,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ChatLogicHelper.cs" />
+    <Compile Include="Helpers\HubConnectionsStorage.cs" />
     <Compile Include="Hubs\PublicHub.cs" />
     <Compile Include="Models\Chat\CorrectAnswerMessageModel.cs" />
     <Compile Include="Models\Chat\MessageModel.cs" />
@@ -210,6 +211,7 @@
     <Content Include="HtmlTemplates\answerPlayer.html" />
     <Content Include="HtmlTemplates\chatInput.html" />
     <Content Include="HtmlTemplates\chatRenderer.html" />
+    <Content Include="HtmlTemplates\connectedUsersInfo.html" />
     <Content Include="HtmlTemplates\imaLiJaciPublic.html" />
     <Content Include="HtmlTemplates\imaLiJaciTutorial.html" />
     <Content Include="HtmlTemplates\leaderboard.html" />
@@ -220,6 +222,7 @@
     <Content Include="Scripts\src\controllers\leaderboard.js" />
     <Content Include="Scripts\src\directives\answerPlayer.js" />
     <Content Include="Scripts\src\directives\bulletRain.js" />
+    <Content Include="Scripts\src\directives\connectedUsersInfo.js" />
     <Content Include="Scripts\src\directives\mainNavigation.js" />
     <Content Include="Scripts\src\directives\signedInUserInfo.js" />
     <Content Include="Scripts\src\enums\hubListenerNames.js" />
