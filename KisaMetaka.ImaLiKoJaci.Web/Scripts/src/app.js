@@ -5,4 +5,7 @@ imaLiJaciModul.config(
 
         $provide.constant('$currentUser', !!imaLiJaciModul.currentUser.Id ? imaLiJaciModul.currentUser : null);
   }
-]);
+    ])
+.run(['publicChatHub',function(publicChatHub) {
+    
+}]);
