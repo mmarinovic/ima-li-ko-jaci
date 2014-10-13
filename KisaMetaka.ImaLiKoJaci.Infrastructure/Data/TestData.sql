@@ -2,9 +2,31 @@
 GO
 
 INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Mirela Holy', N'mirela-holy.mp3')
-INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Pljačkam turiste', N'pljackam-turiste.mp3')
 INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Učka učka', N'ucka-ucka.mp3')
-
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Get funky', N'get-funky.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Imam zgodnu prijateljicu', N'imam-zgodnu-prijateljicu.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Megamasa', N'megamasa.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Niko nema meda', N'niko-nema-meda.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Paka', N'paka.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Posudi', N'posudi.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Tarzan', N'tarzan.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Zaboravi', N'zaboravi.mp3')
+GO
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Pljačkam turiste', N'pljackam-turiste.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Daj pare', N'daj-pare.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Drei millioner', N'drei-millioner.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Hayabusa', N'hayabusa.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Komuna', N'komuna.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Konan', N'konan.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Mejasi', N'mejasi.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Model', N'model.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Pazar', N'pazar.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Skidaj gace', N'skidaj-gace.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Swag iznad svega', N'swag-iznad-svega.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Swagusa', N'swagusa.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Umjetnik erotike', N'umjetnik-erotike.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Apartman', N'apartman.mp3')
+INSERT [dbo].[Songs] ([Title], [FileName]) VALUES (N'Fani money', N'fani-money.mp3')
 GO
 INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (N'ima li ko jaci, ima li ko jaci', N'S ovakvim modelima ne isplati se kacit', 19, 24, 10, 1)
 INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreValue], [SongId]) VALUES (N'ganđa mi je sirova, nosin je u đepu', N'obavim poziv eto me za sekund ', 30, 34, 10, 1)
