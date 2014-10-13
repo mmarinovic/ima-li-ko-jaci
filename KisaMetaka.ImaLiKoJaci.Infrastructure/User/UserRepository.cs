@@ -34,7 +34,7 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
         public void Update(int id, string displayName)
         {
             if (id <= 0) { throw new ArgumentException("id"); }
-            if (string.IsNullOrWhiteSpace(displayName)) { throw new ArgumentException("displayName"); }
+            if (string.IsNullOrWhiteSpace(displayName) || displayName.Length > 25){ throw new ArgumentException("displayName"); }
 
             var possibleUserWithDisplayName = _context.Users.SingleOrDefault(u => u.DisplayName.Equals(displayName, StringComparison.CurrentCultureIgnoreCase));
 
