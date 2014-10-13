@@ -71,11 +71,19 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
             return new UserDto(user);
         }
 
+        public UserDto GetBot()
+        {
+            return TryGet("bot");
+        }
+        public UserDto GetAnonymous()
+        {
+            return TryGet("anonimac");
+        }
         public IEnumerable<UserDto> GetForLeaderboard()
         {
             return
                 _context.Users
-                        .Where(u => u.FacebookId != "bot")
+                        .Where(u => u.FacebookId != "bot" && u.FacebookId != "anonimac")
                         .OrderByDescending(u => u.TotalScore)
                         .ToList()
                         .Select(u => new UserDto(u))

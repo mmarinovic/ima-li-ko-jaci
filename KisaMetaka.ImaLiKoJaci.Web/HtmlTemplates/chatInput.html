@@ -1,5 +1,5 @@
-﻿<span ng-if="!isUserSignedIn">Legendo, <a href="/login" target="_self">prijavi se priko FEJSA</a> da moš pisat</span>
+﻿<span ng-if="!isUserSignedIn">Anonimac, <a href="/login" target="_self">prijavi se priko FEJSA</a> za ultimativni SWAG</span>
 <form ng-submit="sendAnswer(answer)">
-    <input class="form-control" type="text" ng-model="answer" ng-disabled="!isUserSignedIn" />
-    <input type="submit" class="btn btn-success" ng-disabled="!answer.length || !isUserSignedIn" value="Send" />
+    <input class="form-control" type="text" ng-model="answer" />
+    <input type="submit" class="btn btn-success" ng-disabled="!answer.length" value="Send" />
 </form>

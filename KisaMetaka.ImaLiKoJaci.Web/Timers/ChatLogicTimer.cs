@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Web.Hosting;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Lyrics;
+using KisaMetaka.ImaLiKoJaci.Infrastructure.Services;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.User;
 using KisaMetaka.ImaLiKoJaci.Infrastructure.Utility;
 using KisaMetaka.ImaLiKoJaci.Web.Hubs;
@@ -37,19 +38,25 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
             _timer = new Timer(_FinishAndSetupNewRound, null, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(30));
         }
 
+        public void SendCurrentRoundInfo(string connectionId = null)
+        {
+            if (_isRoundInProgress)
+            {
+                var questionMessageModel = new MessageModel(_botUser, _currentLyrics.Question, MessageType.Question);
+                PublicHub.SendMessage(questionMessageModel, connectionId);
+
+                var hiddenAnswerMessageModel = new MessageModel(_botUser, _currentLyrics.HiddenAnswer, MessageType.Question);
+                PublicHub.SendMessage(hiddenAnswerMessageModel, connectionId);  
+            }
+        }
+
         private void _FinishAndSetupNewRound(object state)
         {
             if (!_isRoundInProgress)
             {
                 _currentLyrics = _lyricsRepository.GetRandom();
-
-                var questionMessageModel = new MessageModel(_botUser, _currentLyrics.Question, MessageType.Question);
-                PublicHub.SendMessage(questionMessageModel);
-
-                var hiddenAnswerMessageModel = new MessageModel(_botUser, _currentLyrics.HiddenAnswer, MessageType.Question);
-                PublicHub.SendMessage(hiddenAnswerMessageModel);
-
                 _isRoundInProgress = true;
+                SendCurrentRoundInfo();
             }
             else
             {
@@ -73,19 +80,17 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Timers
         {
             if (!_isRoundInProgress) { return false; }
 
-            var isWinningAnswer = answer.LyricEquals(_currentLyrics.Answer);
+            return answer.LyricEquals(_currentLyrics.Answer);
+        }
 
-            if (isWinningAnswer)
-            {
-                var winningMessage = string.Format("{0} je točno odgovorio za +{1} bodova!", user.DisplayName, _currentLyrics.ScoreValue);
-                var winningMessageModel = new MessageModel(_botUser, winningMessage, MessageType.WinningAnswer);
+        public void AwardPointsAndAnnounceWinner(string answer, UserDto user)
+        {
+            var winningMessage = string.Format("{0} je točno odgovorio za +{1} bodova!", user.DisplayName, _currentLyrics.ScoreValue);
+            var winningMessageModel = new MessageModel(_botUser, winningMessage, MessageType.WinningAnswer);
 
-                PublicHub.SendMessage(winningMessageModel);
+            PublicHub.SendMessage(winningMessageModel);
 
-                _userRepository.AddScore(user.Id, _currentLyrics.ScoreValue);
-            }
-
-            return isWinningAnswer;
+            _userRepository.AddScore(user.Id, _currentLyrics.ScoreValue);
         }
 
         public void Stop(bool immediate)

@@ -9,6 +9,8 @@ namespace KisaMetaka.ImaLiKoJaci.Infrastructure.User
         void AddScore(int id, int scoreValue);
 
         UserDto TryGet(string facebookId);
+        UserDto GetAnonymous();
+        UserDto GetBot();
         IEnumerable<UserDto> GetForLeaderboard();
     }
 }

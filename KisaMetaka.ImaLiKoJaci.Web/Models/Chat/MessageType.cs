@@ -6,6 +6,7 @@
         CorrectAnswer = 2,
         UserAnswer = 3,
         Info = 4,
-        WinningAnswer = 5
+        WinningAnswer = 5,
+        UserArrival = 6
     }
 }

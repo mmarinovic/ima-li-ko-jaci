@@ -20,9 +20,19 @@ namespace KisaMetaka.ImaLiKoJaci.Web.Helpers
             _timer.Stop(true);
         }
 
+        public static void SendCurrentRoundInfo(string connectionId = null)
+        {
+            _timer.SendCurrentRoundInfo(connectionId);
+        }
+
         public static bool CheckWinningAnswer(string answer, UserDto user)
         {
             return _timer.CheckWinningAnswer(answer, user);
+        }
+
+        public static void AwardPointsAndAnnounceWinner(string answer, UserDto user)
+        {
+            _timer.AwardPointsAndAnnounceWinner(answer, user);
         }
     }
 }

@@ -42,5 +42,6 @@ INSERT [dbo].[Lyrics] ([Question], [Answer], [FromSecond], [ToSecond], [ScoreVal
 GO
 INSERT [dbo].[Users] ([DisplayName], [FacebookId], [JoinedOn], [TotalScore]) VALUES (N'Nebojsa Veron', N'10204203015810020', CAST(0x0000A3C2001EB67B AS DateTime), 0)
 INSERT [dbo].[Users] ([DisplayName], [FacebookId], [JoinedOn], [TotalScore]) VALUES (N'KM BOT', N'bot', CAST(0x0000A3C200000000 AS DateTime), 0)
+INSERT [dbo].[Users] ([DisplayName], [FacebookId], [JoinedOn], [TotalScore]) VALUES (N'Anonimac', N'anonimac', CAST(0x0000A3C200000000 AS DateTime), 0)
 INSERT [dbo].[Users] ([DisplayName], [FacebookId], [JoinedOn], [TotalScore]) VALUES (N'Marko Marinovic', N'10152572816673509', CAST(0x0000A3C200000000 AS DateTime), 0)
 GO
